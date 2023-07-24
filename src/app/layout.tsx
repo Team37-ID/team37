@@ -27,12 +27,12 @@ export default function RootLayout({
 					strategy="afterInteractive"
 					dangerouslySetInnerHTML={{
 						__html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments)}
-            gtag('js', new Date());
+						window.dataLayer = window.dataLayer || [];
+						function gtag(){dataLayer.push(arguments)}
+						gtag('js', new Date());
 
-            gtag('config', '${process.env.FIREBASE_MEASUREMENT_ID}');
-          `,
+						gtag('config', '${process.env.FIREBASE_MEASUREMENT_ID}');
+						`,
 					}}
 				/>
 			</head>
