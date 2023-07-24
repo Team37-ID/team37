@@ -4,6 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { NAV_ITEMS } from "@/components/NavigationBar/itemsList"
 import ButtonNavBar from "@/components/ui/button/ButtonNavBar"
+import ButtonCta from "@/components/ui/button/ButtonCta"
 
 export default function Home() {
   return (
@@ -20,7 +21,7 @@ export default function Home() {
               </Link>
             ))}
           </NavItemList>
-          <button>Contact us</button>
+          <ButtonCta>Contact us</ButtonCta>
         </NavBar>
       </header>
     </main>
