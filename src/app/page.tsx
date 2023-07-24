@@ -3,10 +3,11 @@ import NavItemList from "@/components/NavigationBar/NavItemList"
 import Image from "next/image"
 import Link from "next/link"
 import { NAV_ITEMS } from "@/components/NavigationBar/itemsList"
+import ButtonNavBar from "@/components/ui/button/ButtonNavBar"
 
 export default function Home() {
   return (
-    <main className="flex flex-row justify-center min-h-screen md:p-24">
+    <main className="flex flex-col justify-between min-h-screen max-w-7xl md:min-w-3xl mx-auto top-0 bg-black">
       <header>
         <NavBar>
           <Link href="#" passHref>
@@ -15,7 +16,7 @@ export default function Home() {
           <NavItemList>
             {NAV_ITEMS.map((item) => (
               <Link href={item.href || "/"} key={item.label} target="_blank">
-                <button>{item.label}</button>
+                <ButtonNavBar>{item.label}</ButtonNavBar>
               </Link>
             ))}
           </NavItemList>
