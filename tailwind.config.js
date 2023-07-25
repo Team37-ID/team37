@@ -17,6 +17,9 @@ module.exports = {
 				"glow-md": "0 0 20px rgba(99, 102, 241, 1)",
 				"glow-lg": "0 0 30px rgba(99, 102, 241, 1)",
 			},
+			fontFamily: {
+				"ibm-plexmono": ["IBM Plex Mono", "monospace"],
+			},
 		},
 	},
 	plugins: [],
