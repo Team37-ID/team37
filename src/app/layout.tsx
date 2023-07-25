@@ -20,6 +20,7 @@ import {
 	Dribbble,
 } from "iconoir-react"
 
+
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
