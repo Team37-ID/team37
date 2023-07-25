@@ -1851,6 +1851,11 @@ human-signals@^4.3.0:
   resolved "https://registry.yarnpkg.com/human-signals/-/human-signals-4.3.1.tgz#ab7f811e851fca97ffbd2c1fe9a958964de321b2"
   integrity sha512-nZXjEF2nbo7lIw3mgYjItAfgQXog3OjJogSbKa2CQIIvSGWcKgeJnQlNXip6NglNzYH45nSRiEVimMvYL8DDqQ==
 
+iconoir-react@^6.10.0:
+  version "6.10.0"
+  resolved "https://registry.yarnpkg.com/iconoir-react/-/iconoir-react-6.10.0.tgz#81a085baf681c2d8be5db8ee52039d2f6692c790"
+  integrity sha512-gau34HMBa+XwCyIK4GzIYbBCVWWadaSjBVX4CQecqwAZfSDI3FPp7AWLZ40FRGuvGmiUpWz+g0P/T/CQlzOTEw==
+
 idb@7.0.1:
   version "7.0.1"
   resolved "https://registry.yarnpkg.com/idb/-/idb-7.0.1.tgz#d2875b3a2f205d854ee307f6d196f246fea590a7"
