@@ -1,8 +1,9 @@
+import ButtonCta from "@/components/ui/button/ButtonCta"
 import Image from "next/image"
 
 export default function Home() {
 	return (
-		<main className="flex flex-col items-center justify-center min-h-screen">
+		<main className="flex flex-col items-center my-52 justify-between min-h-screen">
 			<section className="landing-page flex flex-col items-center justify-center">
 				<Image
 					className="absolute z-10 hidden md:block"
@@ -23,7 +24,9 @@ export default function Home() {
 								<br />
 							</h1>
 							<h1 className="flex flex-row items-center justify-center gap-4 md:text-7xl text-center md:leading-none font-bold">
-								<span className="text-[#2CDA9D] w-[137px]">Dev</span>
+								<span className="text-[#2CDA9D] w-[137px]">
+									Dev
+								</span>
 								<span className="bg-gradient-to-br bg-clip-text from-white to-[#706F6C] text-transparent">
 									Services
 								</span>
@@ -43,6 +46,37 @@ export default function Home() {
 						</span>
 						<span>to contact us</span>
 					</div>
+				</div>
+			</section>
+			<section className="banner relative border-transparent w-full bg-zinc-800 rounded-2xl">
+				<div className="flex flex-col w-full justify-center align-middle items-center py-12 gap-12 z-30">
+					<Image
+						className="absolute left-2 blur-lg w-fit h-fit"
+						src="abstract.svg"
+						width={128}
+						height={128}
+						alt="abstract"
+					/>
+					<Image
+						className="absolute opacity-10 w-full h-fit rounded-2xl"
+						src="noise.svg"
+						width={2048}
+						height={2048}
+						alt="abstract"
+					/>
+					<Image
+						className="z-30"
+						src="team37-logo.svg"
+						alt="Team 37 logo"
+						width={150}
+						height={150}
+					/>
+					<span className="flex flex-col z-30 align-middle items-center justify-center text-7xl leading-none font-bold bg-gradient-to-br bg-clip-text text-transparent from-white to-[#706F6C]">
+						<h1>We listen</h1>
+						<h1>We do</h1>
+						<h1>We deliver</h1>
+					</span>
+					<ButtonCta>Free consultation</ButtonCta>
 				</div>
 			</section>
 		</main>
