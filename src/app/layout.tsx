@@ -18,6 +18,7 @@ import {
 	Twitter,
 	YouTube,
 	Dribbble,
+	GitHub,
 } from "iconoir-react"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -206,6 +207,12 @@ export default function RootLayout({
 								href=""
 							>
 								<Dribbble />
+							</Link>
+							<Link
+								className="hover:text-zinc-500 transition duration-100 ease-linear"
+								href="https://github.com/Team37-ID"
+							>
+								<GitHub />
 							</Link>
 						</div>
 					</section>
