@@ -20,7 +20,6 @@ import {
 	Dribbble,
 } from "iconoir-react"
 
-
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
@@ -166,25 +165,46 @@ export default function RootLayout({
 							Follow Us
 						</h3>
 						<div className="grid grid-cols-4 flex-row gap-4 text-zinc-300">
-							<Link href="https://instagram.com/team37.id">
+							<Link
+								className="hover:text-zinc-500 transition duration-100 ease-linear"
+								href="https://instagram.com/team37.id"
+							>
 								<Instagram />
 							</Link>
-							<Link href="">
+							<Link
+								className="hover:text-zinc-500 transition duration-100 ease-linear"
+								href=""
+							>
 								<TikTok />
 							</Link>
-							<Link href="https://www.linkedin.com/company/team-37-id/">
+							<Link
+								className="hover:text-zinc-500 transition duration-100 ease-linear"
+								href="https://www.linkedin.com/company/team-37-id/"
+							>
 								<LinkedIn />
 							</Link>
-							<Link href="">
+							<Link
+								className="hover:text-zinc-500 transition duration-100 ease-linear"
+								href=""
+							>
 								<Facebook />
 							</Link>
-							<Link href="">
+							<Link
+								className="hover:text-zinc-500 transition duration-100 ease-linear"
+								href=""
+							>
 								<Twitter />
 							</Link>
-							<Link href="">
+							<Link
+								className="hover:text-zinc-500 transition duration-100 ease-linear"
+								href=""
+							>
 								<YouTube />
 							</Link>
-							<Link href="">
+							<Link
+								className="hover:text-zinc-500 transition duration-100 ease-linear"
+								href=""
+							>
 								<Dribbble />
 							</Link>
 						</div>
