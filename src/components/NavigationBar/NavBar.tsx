@@ -6,7 +6,7 @@ interface NavBarProps {
 
 const NavBar = ({ children }: NavBarProps) => {
 	return (
-		<nav className="flex flex-row items-center justify-between align-middle z-10 p-6 bg-transparent border-b-[1px] border-b-[#202020]">
+		<nav className="flex flex-row items-center justify-between align-middle z-10 py-6 bg-transparent border-b-[1px] border-b-[#202020]">
 			{children}
 		</nav>
 	)
