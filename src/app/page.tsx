@@ -124,6 +124,109 @@ export default function Home() {
 					</div>
 				</div>
 			</section>
+			<section className="flex flex-col items-start gap-8 testimonials">
+				<h1 className="font-medium text-white uppercase md:text-xl md:leading-7">
+					Testimonials
+				</h1>
+				<div className="flex flex-col gap-32">
+					<div className="flex flex-col tob-brands">
+						<div className="flex flex-col gap-16">
+							<div className="flex flex-col gap-6">
+								<h2 className="md:text-4xl md:leading-10 font-bold bg-gradient-to-r bg-clip-text text-transparent from-blue-500 to-[#8B5CF6] capitalize">
+									What Our Client says
+								</h2>
+								<p className="md:text-xl md:leading-7 font-normal text-zinc-400 w-[563px]">
+									Let our projects do the talking and witness
+									the success stories yourself!
+								</p>
+							</div>
+							<div className="flex flex-row w-full">
+								<div className="flex flex-col items-start gap-6 client-testi w-[445px]">
+									<p className="font-normal text-gray-300 md:text-lg md:leading-7">
+										&#34;Team 37&#39;s services have been
+										nothing short of exceptional! Their
+										strategic insights and innovative
+										solutions have propelled our company to
+										new heights. A truly valuable partner
+										for growth.&#34;
+									</p>
+									<div className="flex flex-row items-start gap-6">
+										<Image
+											className="rounded-full"
+											src="/avatar.png"
+											width={48}
+											height={48}
+											alt="Picture of client"
+										/>
+										<div>
+											<h1 className="font-bold text-white capitalize md:text-lg md:leading-7">
+												Rebecca Turner
+											</h1>
+											<h2 className="font-normal md:text-sm md:leading-5 text-stone-400">
+												CFO of Cozylila
+											</h2>
+										</div>
+									</div>
+								</div>
+								<div className="flex flex-col items-start gap-6 client-testi w-[445px]">
+									<p className="font-normal text-gray-300 md:text-lg md:leading-7">
+										&#34;Team 37&#39;s expertise has proven
+										invaluable in optimizing our financial
+										processes. Their data-driven approach
+										and cost-saving strategies have
+										significantly improved our bottom
+										line.&#34;
+									</p>
+									<div className="flex flex-row items-start gap-6">
+										<Image
+											className="rounded-full"
+											src="/avatar.png"
+											width={48}
+											height={48}
+											alt="Picture of client"
+										/>
+										<div>
+											<h1 className="font-bold text-white capitalize md:text-lg md:leading-7">
+												Rebecca Turner
+											</h1>
+											<h2 className="font-normal md:text-sm md:leading-5 text-stone-400">
+												CFO of Cozylila
+											</h2>
+										</div>
+									</div>
+								</div>
+								<div className="flex flex-col items-start gap-6 client-testi w-[445px]">
+									<p className="font-normal text-gray-300 md:text-lg md:leading-7">
+										&#34;Working with Team 37 has been a
+										game-changer for our HR department.
+										Their talent acquisition and development
+										solutions have brought in top-tier
+										talent and enhanced our workforce
+										capabilities.&#34;
+									</p>
+									<div className="flex flex-row items-start gap-6">
+										<Image
+											className="rounded-full"
+											src="/avatar.png"
+											width={48}
+											height={48}
+											alt="Picture of client"
+										/>
+										<div>
+											<h1 className="font-bold text-white capitalize md:text-lg md:leading-7">
+												Rebecca Turner
+											</h1>
+											<h2 className="font-normal md:text-sm md:leading-5 text-stone-400">
+												CFO of Cozylila
+											</h2>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 			<section className="relative w-full border-transparent banner bg-zinc-800 rounded-2xl">
 				<div className="z-30 flex flex-col items-center justify-center w-full gap-12 py-12 align-middle">
 					<Image
