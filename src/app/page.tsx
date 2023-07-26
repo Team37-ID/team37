@@ -227,6 +227,32 @@ export default function Home() {
 					</div>
 				</div>
 			</section>
+			<section className="flex flex-col items-start gap-8 testimonials">
+				<h1 className="font-medium text-white uppercase md:text-xl md:leading-7">
+					Services
+				</h1>
+				<div className="flex flex-col gap-32">
+					<div className="flex flex-col tob-brands">
+						<div className="flex flex-col gap-16">
+							<div className="flex flex-col gap-6">
+								<h2 className="md:text-4xl md:leading-10 font-bold bg-gradient-to-r bg-clip-text text-transparent from-blue-500 to-[#8B5CF6] capitalize">
+									Supercharged your business with us
+								</h2>
+								<p className="md:text-xl md:leading-7 font-normal text-zinc-400 w-[563px]">
+									Discover your business&#39;s full potential
+									with our expert solutions and dedicated
+									team.
+								</p>
+								<ButtonNormal>
+									<span>Learn more about our service</span>
+									<ArrowRight />
+								</ButtonNormal>
+							</div>
+							{/* TODO: Add service card here */}
+						</div>
+					</div>
+				</div>
+			</section>
 			<section className="relative w-full border-transparent banner bg-zinc-800 rounded-2xl">
 				<div className="z-30 flex flex-col items-center justify-center w-full gap-12 py-12 align-middle">
 					<Image
