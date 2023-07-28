@@ -1,10 +1,15 @@
+"use client"
+
 import ButtonCta from "@/components/ui/button/ButtonCta"
 import Image from "next/image"
 import Link from "next/link"
 import ButtonNormal from "@/components/ui/button/ButtonNormal"
-import { ArrowRight } from "iconoir-react"
+import { ArrowRight, Code } from "iconoir-react"
+import { useState } from "react"
 
 export default function Home() {
+	const [isContentVisible, setIsContentVisible] = useState(false)
+
 	return (
 		<main className="flex flex-col justify-between min-h-screen gap-64 my-52">
 			<section className="flex flex-col items-center justify-center landing-page">
@@ -249,6 +254,35 @@ export default function Home() {
 								</ButtonNormal>
 							</div>
 							{/* TODO: Add service card here */}
+							<div className="grid grid-rows-3 items-center justify-between align-middle">
+								<div className="w-[446px] h-52 bg-neutral-900 transition hover:bg-dev-card rounded-lg border px-4 border-neutral-400">
+									<div className="flex flex-col justify-between align-middle w-full">
+										<div className="flex flex-col items-end">
+											<div className="text-transparent">
+												abc
+											</div>
+											<Code
+												fontWeight={6}
+												width={96}
+												height={96}
+												className="text-zinc-800 mr-6"
+											/>
+										</div>
+										<div className="flex flex-col gap-4 transform translate-y-10">
+											<Image
+												src="37.dev.svg"
+												width={128}
+												height={29}
+												alt="37.dev logo"
+											/>
+											<p className={`md:text-base md:leading-6 font-medium text-zinc-300 ${isContentVisible ? "opacity-100" : "opacity-0"}`}>
+												Dream big, leave the details to
+												us
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
