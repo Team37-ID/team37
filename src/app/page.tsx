@@ -1,5 +1,3 @@
-"use client"
-
 import ButtonCta from "@/components/ui/button/ButtonCta"
 import Image from "next/image"
 import Link from "next/link"
@@ -13,11 +11,8 @@ import {
 	GraduationCap,
 	Brain,
 } from "iconoir-react"
-import { useState } from "react"
 
 export default function Home() {
-	const [isContentVisible, setIsContentVisible] = useState(true)
-
 	return (
 		<main className="flex flex-col justify-between min-h-screen gap-64 my-52">
 			<section className="flex flex-col items-center justify-center landing-page">
