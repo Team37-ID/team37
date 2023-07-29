@@ -34,6 +34,12 @@ module.exports = {
 				"edu-card": "#0F1B2D",
 				"ai-card" : "#221A00",
 			},
+			maxWidth: {
+				"8xl": "88rem",
+			},
+			maxHeight: {
+				"8xl": "88rem",
+			},
 		},
 	},
 	plugins: [],
