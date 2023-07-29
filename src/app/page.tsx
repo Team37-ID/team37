@@ -137,7 +137,7 @@ export default function Home() {
 					Testimonials
 				</h1>
 				<div className="flex flex-col gap-32">
-					<div className="flex flex-col tob-brands">
+					<div className="flex flex-col top-brands">
 						<div className="flex flex-col gap-16">
 							<div className="flex flex-col gap-6">
 								<h2 className="md:text-4xl md:leading-10 font-bold bg-gradient-to-r bg-clip-text text-transparent from-blue-500 to-[#8B5CF6] capitalize">
