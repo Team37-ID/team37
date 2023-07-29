@@ -8,7 +8,7 @@ import { ArrowRight, Code } from "iconoir-react"
 import { useState } from "react"
 
 export default function Home() {
-	const [isContentVisible, setIsContentVisible] = useState(false)
+	const [isContentVisible, setIsContentVisible] = useState(true)
 
 	return (
 		<main className="flex flex-col justify-between min-h-screen gap-64 my-52">
@@ -255,27 +255,30 @@ export default function Home() {
 							</div>
 							{/* TODO: Add service card here */}
 							<div className="grid grid-rows-3 items-center justify-between align-middle">
-								<div className="w-[446px] h-52 bg-neutral-900 transition hover:bg-dev-card rounded-lg border px-4 border-neutral-400">
+								<div className="group w-[446px] overflow-hidden h-52 bg-neutral-900 transition-all duration-300 hover:bg-dev-card rounded-lg border px-6 border-neutral-400">
 									<div className="flex flex-col justify-between align-middle w-full">
 										<div className="flex flex-col items-end">
 											<div className="text-transparent">
 												abc
 											</div>
-											<Code
-												fontWeight={6}
-												width={96}
-												height={96}
-												className="text-zinc-800 mr-6"
-											/>
+											<div className="duration-300">
+												<div className="w-[90px] h-[90px] bg-dev-service rounded-full absolute z-10 blur-2xl hidden group-hover:block"></div>
+												<Code
+													fontWeight={6}
+													width={96}
+													height={96}
+													className="z-20 text-zinc-800 mr-6 group-hover:text-dev-service relative bg-transparent"
+												/>
+											</div>
 										</div>
-										<div className="flex flex-col gap-4 transform translate-y-10">
+										<div className="flex flex-col gap-4 transform translate-y-10 group-hover:-translate-y-1 duration-300">
 											<Image
 												src="37.dev.svg"
 												width={128}
 												height={29}
 												alt="37.dev logo"
 											/>
-											<p className={`md:text-base md:leading-6 font-medium text-zinc-300 ${isContentVisible ? "opacity-100" : "opacity-0"}`}>
+											<p className="md:text-base md:leading-6 font-medium text-zinc-300">
 												Dream big, leave the details to
 												us
 											</p>
