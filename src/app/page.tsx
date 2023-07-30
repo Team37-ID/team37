@@ -59,7 +59,7 @@ export default function Home() {
 					</div>
 				</div>
 			</section>
-			<section className="flex flex-col items-start gap-8 projects">
+			<section className="flex flex-col items-start gap-8 projects overflow-hidden">
 				<h1 className="font-medium text-white uppercase md:text-xl md:leading-7">
 					Projects
 				</h1>
@@ -105,27 +105,75 @@ export default function Home() {
 									<ArrowRight />
 								</ButtonNormal>
 							</div>
-							<div className="flex flex-col items-center justify-center gap-4 w-max">
-								<Image
-									className="items-center border-2 border-white rounded-2xl"
-									src="/nuxtlabs.png"
-									width={512}
-									height={249}
-									alt="projects"
-								/>
-								<div className="flex flex-col items-center justify-center">
-									<h1 className="font-bold text-white md:text-xl md:leading-7">
-										NuxtLabs: Your vision, today
-									</h1>
-									<Link
-										href="https://nuxtlabs.com"
-										target="_blank"
-										passHref
-									>
-										<span className="text-base font-normal leading-6 text-blue-400 hover:border-b hover:border-blue-400">
-											nuxtlabs.com
-										</span>
-									</Link>
+							<div className="flex flex-row gap-16 justify-center items-center align-middle">
+								<div className="flex flex-col items-center justify-center gap-4 w-max">
+									<Image
+										className="items-center border-2 border-white rounded-2xl"
+										src="/nuxtlabs.png"
+										width={512}
+										height={249}
+										alt="projects"
+									/>
+									<div className="flex flex-col items-center justify-center">
+										<h1 className="font-bold text-white md:text-xl md:leading-7">
+											NuxtLabs: Your vision, today
+										</h1>
+										<Link
+											href="https://nuxtlabs.com"
+											target="_blank"
+											passHref
+										>
+											<span className="text-base font-normal leading-6 text-blue-400 hover:border-b hover:border-blue-400">
+												nuxtlabs.com
+											</span>
+										</Link>
+									</div>
+								</div>
+								<div className="flex flex-col items-center justify-center gap-4 w-max">
+									<Image
+										className="items-center border-2 border-white rounded-2xl"
+										src="/nuxtlabs.png"
+										width={512}
+										height={249}
+										alt="projects"
+									/>
+									<div className="flex flex-col items-center justify-center">
+										<h1 className="font-bold text-white md:text-xl md:leading-7">
+											NuxtLabs: Your vision, today
+										</h1>
+										<Link
+											href="https://nuxtlabs.com"
+											target="_blank"
+											passHref
+										>
+											<span className="text-base font-normal leading-6 text-blue-400 hover:border-b hover:border-blue-400">
+												nuxtlabs.com
+											</span>
+										</Link>
+									</div>
+								</div>
+								<div className="flex flex-col items-center justify-center gap-4 w-max">
+									<Image
+										className="items-center border-2 border-white rounded-2xl"
+										src="/nuxtlabs.png"
+										width={512}
+										height={249}
+										alt="projects"
+									/>
+									<div className="flex flex-col items-center justify-center">
+										<h1 className="font-bold text-white md:text-xl md:leading-7">
+											NuxtLabs: Your vision, today
+										</h1>
+										<Link
+											href="https://nuxtlabs.com"
+											target="_blank"
+											passHref
+										>
+											<span className="text-base font-normal leading-6 text-blue-400 hover:border-b hover:border-blue-400">
+												nuxtlabs.com
+											</span>
+										</Link>
+									</div>
 								</div>
 							</div>
 						</div>
