@@ -33,6 +33,8 @@ module.exports = {
 				"out-card": "#2B1400",
 				"edu-card": "#0F1B2D",
 				"ai-card" : "#221A00",
+				"glassmorphism-08": "rgba(32, 32, 32, 0.08)",
+				"glassmorphism-38": "rgba(32, 32, 32, 0.38)",
 			},
 			maxWidth: {
 				"8xl": "88rem",
