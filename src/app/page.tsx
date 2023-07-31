@@ -1,3 +1,5 @@
+"use client"
+
 import ButtonCta from "@/components/ui/button/ButtonCta"
 import Image from "next/image"
 import Link from "next/link"
@@ -11,11 +13,13 @@ import {
 	GraduationCap,
 	Brain,
 } from "iconoir-react"
+import StarsParticle from "@/components/particles/StarsParticle"
 
 export default function Home() {
 	return (
 		<main className="flex flex-col justify-between min-h-screen gap-64 my-52">
 			<section className="flex flex-col items-center justify-center landing-page">
+				<StarsParticle id="tsparticles" />
 				<Image
 					className="absolute z-10 hidden md:block"
 					src="aurora.svg"
