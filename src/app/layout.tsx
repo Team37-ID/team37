@@ -83,7 +83,7 @@ export default function RootLayout({
 					</NavBar>
 				</header>
 				{children}
-				<footer className="flex flex-row justify-between pb-6">
+				<footer className="flex flex-row justify-between pb-6 z-50">
 					<section className="brand-identity flex flex-col justify-between items-start gap-4 h-48 text-base leading-6 font-medium text-zinc-300">
 						<Link href="#">
 							<Image
