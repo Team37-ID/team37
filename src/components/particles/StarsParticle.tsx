@@ -1,4 +1,4 @@
-import { FC, useCallback, useMemo } from "react"
+import { useCallback, useMemo } from "react"
 import type { Engine, ISourceOptions, Container } from "tsparticles-engine"
 import Particles from "react-tsparticles"
 import { loadStarsPreset } from "tsparticles-preset-stars"
@@ -7,7 +7,7 @@ type Props = {
 	id: string
 }
 
-const StarsParticle: FC<Props> = ({ id }) => {
+const StarsParticle = ({ id }: Props) => {
 	const options: ISourceOptions = useMemo(() => {
 		return {
 			preset: "stars",
