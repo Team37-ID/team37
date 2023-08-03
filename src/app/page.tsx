@@ -63,7 +63,7 @@ export default function Home() {
 					</div>
 				</div>
 			</section>
-			<section className="flex flex-col items-start gap-8 projects overflow-hidden z-50">
+			<section className="flex flex-col items-start gap-8 projects overflow-hidden z-40">
 				<h1 className="font-medium text-white uppercase md:text-xl md:leading-7">
 					Projects
 				</h1>
@@ -184,7 +184,7 @@ export default function Home() {
 					</div>
 				</div>
 			</section>
-			<section className="flex flex-col items-start gap-8 testimonials z-50">
+			<section className="flex flex-col items-start gap-8 testimonials z-40">
 				<h1 className="font-medium text-white uppercase md:text-xl md:leading-7">
 					Testimonials
 				</h1>
@@ -282,7 +282,7 @@ export default function Home() {
 					</div>
 				</div>
 			</section>
-			<section className="flex flex-col items-start gap-8 services z-50">
+			<section className="flex flex-col items-start gap-8 services z-40">
 				<h1 className="font-medium text-white w-full uppercase md:text-xl md:leading-7">
 					Services
 				</h1>
