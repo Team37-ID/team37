@@ -17,7 +17,7 @@ const NavBar = ({ children }: NavBarProps) => {
 
 			if (scrollPosition > threshold) {
 				setScrollBackground(
-					"bg-gradient-to-br from-glassmorphism-38 to-glassmorphism-08 stroke-[#202020] backdrop-blur-xl z-100"
+					"bg-gradient-to-br from-glassmorphism-38 to-glassmorphism-08 stroke-[#202020] backdrop-blur-xl z-50"
 				)
 			} else {
 				setScrollBackground("bg-transparent")
