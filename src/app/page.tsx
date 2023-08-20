@@ -30,7 +30,7 @@ export default function Home() {
 				<div className="flex flex-col gap-16">
 					<div className="flex flex-col gap-12">
 						<div className="z-20 hero-headline">
-							<h1 className="font-bold text-center md:text-7xl md:leading-none">
+							<h1 className="font-bold text-center text-3xl leading-9 md:text-7xl md:leading-none">
 								<span className="bg-gradient-to-br bg-clip-text from-white to-[#706F6C] text-transparent">
 									Scaling New Horizons
 									<br />
@@ -38,8 +38,8 @@ export default function Home() {
 								</span>
 								<br />
 							</h1>
-							<h1 className="flex flex-row items-center justify-center gap-4 font-bold text-center md:text-7xl md:leading-none">
-								<span className="inline-flex flex-col md:h-[calc(theme(fontSize.6xl)*theme(lineHeight.tight))] overflow-hidden">
+							<h1 className="flex flex-row items-center justify-center md:gap-4 font-bold text-center text-3xl leading-9 md:text-7xl md:leading-none">
+								<span className="inline-flex flex-col h-[calc(theme(fontSize.3xl)*theme(lineHeight.tight))] md:h-[calc(theme(fontSize.6xl)*theme(lineHeight.tight))] overflow-hidden">
 									<ul className="block animate-text-slide [&_li]:block">
 										<li className="text-dev-service w-[137px]">
 											Dev
