@@ -39,7 +39,7 @@ export default function Home() {
 								<br />
 							</h1>
 							<h1 className="flex flex-row items-center justify-center gap-4 font-bold text-center md:text-7xl md:leading-none">
-								<span className="text-[#2CDA9D] w-[137px]">
+								<span className="text-dev-service w-[137px]">
 									Dev
 								</span>
 								<span className="bg-gradient-to-br bg-clip-text from-white to-[#706F6C] text-transparent">
