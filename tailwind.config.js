@@ -24,7 +24,7 @@ module.exports = {
 				"dev-service": "#2CDA9D",
 				"sec-service": "#6610F2",
 				"edu-service": "#70D6FF",
-				"ai-service" : "#E4FF1A",
+				"ai-service": "#E4FF1A",
 				"des-service": "#FC60A8",
 				"out-service": "#FF7F11",
 				"dev-card": "#0C1F17",
@@ -32,7 +32,7 @@ module.exports = {
 				"sec-card": "#221527",
 				"out-card": "#2B1400",
 				"edu-card": "#0F1B2D",
-				"ai-card" : "#221A00",
+				"ai-card": "#221A00",
 				"glassmorphism-08": "rgba(32, 32, 32, 0.08)",
 				"glassmorphism-38": "rgba(32, 32, 32, 0.38)",
 			},
@@ -41,6 +41,34 @@ module.exports = {
 			},
 			maxHeight: {
 				"8xl": "88rem",
+			},
+			animation: {
+				"text-slide": "text-slide 12.5s cubic-bezier(0.83, 0, 0.17, 1) infinite"
+			},
+			keyframes: {
+				"text-slide": {
+					"0%, 13.33%": {
+						transform: "translateY(0%)",
+					},
+					"16.66%, 29.99%": {
+						transform: "translateY(-14.3%)",
+					},
+					"33.32%, 46.65%": {
+						transform: "translateY(-28.6%)",
+					},
+					"49.98%, 63.31%": {
+						transform: "translateY(-42.9%)",
+					},
+					"66.64%, 79.97%": {
+						transform: "translateY(-57.2%)",
+					},
+					"83.3%, 96.63%": {
+						transform: "translateY(-71.5%)",
+					},
+					"100%": {
+						transform: "translateY(-85.8%)",
+					},
+				},
 			},
 		},
 	},
