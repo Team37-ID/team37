@@ -39,8 +39,33 @@ export default function Home() {
 								<br />
 							</h1>
 							<h1 className="flex flex-row items-center justify-center gap-4 font-bold text-center md:text-7xl md:leading-none">
-								<span className="text-dev-service w-[137px]">
-									Dev
+								<span className="inline-flex flex-col md:h-[calc(theme(fontSize.6xl)*theme(lineHeight.tight))] overflow-hidden">
+									<ul className="block animate-text-slide [&_li]:block">
+										<li className="text-dev-service w-[137px]">
+											Dev
+										</li>
+										<li className="text-des-service w-[137px]">
+											Des
+										</li>
+										<li className="text-sec-service w-[137px]">
+											Sec
+										</li>
+										<li className="text-out-service w-[137px]">
+											Out
+										</li>
+										<li className="text-edu-service w-[137px]">
+											Edu
+										</li>
+										<li className="text-ai-service w-[137px]">
+											AI
+										</li>
+										<li
+											aria-hidden="true"
+											className="text-dev-service w-[137px]"
+										>
+											Dev
+										</li>
+									</ul>
 								</span>
 								<span className="bg-gradient-to-br bg-clip-text from-white to-[#706F6C] text-transparent">
 									Services
