@@ -17,7 +17,7 @@ import StarsParticle from "@/components/particles/StarsParticle"
 
 export default function Home() {
 	return (
-		<main className="flex flex-col justify-between min-h-screen gap-64 my-52">
+		<main className="flex flex-col justify-between min-h-screen gap-64 my-72">
 			<section className="flex flex-col items-center justify-center landing-page">
 				<StarsParticle id="tsparticles" />
 				<Image
