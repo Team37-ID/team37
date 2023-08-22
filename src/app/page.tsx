@@ -17,7 +17,7 @@ import StarsParticle from "@/components/particles/StarsParticle"
 
 export default function Home() {
 	return (
-		<main className="flex flex-col justify-between min-h-screen gap-64 my-72">
+		<main className="flex flex-col justify-between min-h-screen gap-64 my-[24rem] md:my-72">
 			<section className="flex flex-col items-center justify-center landing-page">
 				<StarsParticle id="tsparticles" />
 				<Image
@@ -27,8 +27,8 @@ export default function Home() {
 					height={1200}
 					alt="aurora background"
 				/>
-				<div className="flex flex-col gap-16">
-					<div className="flex flex-col gap-12">
+				<div className="flex flex-col md:gap-16">
+					<div className="flex flex-col gap-6 md:gap-12">
 						<div className="z-20 hero-headline">
 							<h1 className="font-bold text-center text-3xl leading-9 md:text-7xl md:leading-none">
 								<span className="bg-gradient-to-br bg-clip-text from-white to-[#706F6C] text-transparent">
@@ -38,30 +38,28 @@ export default function Home() {
 								</span>
 								<br />
 							</h1>
-							<h1 className="flex flex-row items-center justify-center md:gap-4 font-bold text-center text-3xl leading-9 md:text-7xl md:leading-none">
-								<span className="inline-flex flex-col h-[calc(theme(fontSize.3xl)*theme(lineHeight.tight))] md:h-[calc(theme(fontSize.6xl)*theme(lineHeight.tight))] overflow-hidden">
+							<h1 className="flex flex-row items-center justify-center gap-2 md:gap-4 font-bold text-center text-3xl leading-9 md:text-7xl md:leading-none">
+								<span className="inline-flex flex-col w-auto h-[calc(theme(fontSize.3xl)*theme(lineHeight.tight))] md:h-[calc(theme(fontSize.6xl)*theme(lineHeight.tight))] overflow-hidden">
 									<ul className="block animate-text-slide [&_li]:block">
-										<li className="text-dev-service w-[137px]">
+										<li className="text-dev-service">
 											Dev
 										</li>
-										<li className="text-des-service w-[137px]">
+										<li className="text-des-service">
 											Des
 										</li>
-										<li className="text-sec-service w-[137px]">
+										<li className="text-sec-service">
 											Sec
 										</li>
-										<li className="text-out-service w-[137px]">
+										<li className="text-out-service">
 											Out
 										</li>
-										<li className="text-edu-service w-[137px]">
+										<li className="text-edu-service">
 											Edu
 										</li>
-										<li className="text-ai-service w-[137px]">
-											AI
-										</li>
+										<li className="text-ai-service">AI</li>
 										<li
 											aria-hidden="true"
-											className="text-dev-service w-[137px]"
+											className="text-dev-service"
 										>
 											Dev
 										</li>
@@ -73,7 +71,7 @@ export default function Home() {
 							</h1>
 						</div>
 						<div className="z-20 hero-subheadline">
-							<h2 className="font-medium text-white md:text-2xl md:leading-8">
+							<h2 className="font-medium text-white text-sm leading-5 text-center w-80 md:text-2xl md:leading-8 md:w-auto">
 								We aim to assist your business in advancing
 								through technology.
 							</h2>
