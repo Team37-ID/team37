@@ -87,17 +87,17 @@ export default function Home() {
 				</div>
 			</section>
 			<section className="flex flex-col items-start gap-8 projects overflow-hidden z-40">
-				<h1 className="font-medium text-white uppercase md:text-xl md:leading-7">
+				<h1 className="font-medium text-white uppercase text-sm leading-5 md:text-xl md:leading-7">
 					Projects
 				</h1>
-				<div className="flex flex-col gap-32">
+				<div className="flex flex-col gap-8 md:gap-32">
 					<div className="flex flex-col">
-						<div className="flex flex-col gap-16">
-							<div className="flex flex-col gap-6">
-								<h2 className="md:text-4xl md:leading-10 font-bold bg-gradient-to-r bg-clip-text text-transparent from-blue-500 to-[#8B5CF6]">
+						<div className="flex flex-col gap-8 md:gap-16">
+							<div className="flex flex-col gap-3 md:gap-6">
+								<h2 className="text-lg leading-7 md:text-4xl md:leading-10 font-bold bg-gradient-to-r bg-clip-text text-transparent from-blue-500 to-[#8B5CF6]">
 									Trusted by Top Brands Worldwide
 								</h2>
-								<p className="md:text-xl md:leading-7 font-normal text-zinc-400 w-[563px]">
+								<p className="text-sm leading-5 md:text-xl md:leading-7 font-normal text-zinc-400 w-[327px] md:w-[563px]">
 									Empowering businesses globally with our
 									proven expertise. Your success starts here.
 								</p>
