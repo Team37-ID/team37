@@ -35,7 +35,7 @@ export default function Home() {
 	}, [])
 
 	return (
-		<main className="flex flex-col justify-between min-h-screen gap-64 my-[24rem] md:my-72">
+		<main className="flex flex-col justify-between min-h-screen gap-64 my-[24rem] mx-7 md:my-72">
 			<section className="flex flex-col items-center justify-center landing-page">
 				<StarsParticle id="tsparticles" />
 				<Image
@@ -558,8 +558,8 @@ export default function Home() {
 					</div>
 				</div>
 			</section>
-			<section className="relative w-full border-transparent banner bg-zinc-800 rounded-2xl">
-				<div className="z-30 flex flex-col items-center justify-center w-full gap-12 py-12 align-middle">
+			<section className="relative border-transparent banner bg-zinc-800 rounded-2xl overflow-hidden">
+				<div className="z-30 flex flex-col items-center justify-center gap-12 py-12 align-middle">
 					<Image
 						className="absolute left-2 blur-lg w-fit h-fit"
 						src="abstract.svg"
@@ -568,7 +568,7 @@ export default function Home() {
 						alt="abstract"
 					/>
 					<Image
-						className="absolute w-full opacity-10 h-fit rounded-2xl"
+						className="absolute object-cover top-0 left-0 opacity-10 w-full h-full"
 						src="noise.svg"
 						width={2048}
 						height={2048}
@@ -578,10 +578,10 @@ export default function Home() {
 						className="z-30"
 						src="team37-logo.svg"
 						alt="Team 37 logo"
-						width={150}
-						height={150}
+						width={isMobileView ? 99 : 150}
+						height={isMobileView ? 16 : 150}
 					/>
-					<span className="flex flex-col z-30 align-middle items-center justify-center text-7xl leading-none font-bold bg-gradient-to-br bg-clip-text text-transparent from-white to-[#706F6C]">
+					<span className="flex flex-col z-30 align-middle items-center justify-center text-5xl md:text-7xl leading-none font-bold bg-gradient-to-br bg-clip-text text-transparent from-white to-[#706F6C]">
 						<h1>We listen</h1>
 						<h1>We do</h1>
 						<h1>We deliver</h1>
