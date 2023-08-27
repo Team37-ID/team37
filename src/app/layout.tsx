@@ -56,7 +56,7 @@ export default function RootLayout({
 				/>
 			</head>
 			<body
-				className={`${inter.className} flex flex-col justify-between max-w-8xl md:min-w-3xl md:mx-auto mx-7 top-0 bg-black`}
+				className={`${inter.className} flex flex-col justify-between max-w-8xl md:min-w-3xl md:mx-auto top-0 bg-black`}
 			>
 				<header>
 					<NavBar>
