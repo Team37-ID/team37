@@ -1,8 +1,8 @@
+"use client"
+
 import Script from "next/script"
 import "./globals.css"
 import { Inter } from "next/font/google"
-import NavBar from "@/components/NavigationBar/NavBar"
-import NavItemList from "@/components/NavigationBar/NavItemList"
 import Image from "next/image"
 import Link from "next/link"
 import { NAV_ITEMS } from "@/components/NavigationBar/itemsList"
@@ -21,6 +21,17 @@ import {
 	GitHub,
 } from "iconoir-react"
 import { Providers } from "./providers"
+import {
+	Navbar,
+	NavbarBrand,
+	NavbarContent,
+	NavbarItem,
+	NavbarMenuToggle,
+	NavbarMenuItem,
+	NavbarMenu,
+} from "@nextui-org/react"
+import Team37Logo from "@/components/logo/Team37Logo"
+import { useState } from "react"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -34,6 +45,8 @@ export default function RootLayout({
 }: {
 	children: React.ReactNode
 }) {
+	const [isMenuOpen, setIsMenuOpen] = useState(false)
+
 	return (
 		<html lang="en">
 			<head>
@@ -58,33 +71,51 @@ export default function RootLayout({
 			</head>
 			<Providers>
 				<body
-					className={`${inter.className} selection:text-blue-900 selection:bg-blue-300 flex flex-col justify-between max-w-8xl md:min-w-3xl md:mx-auto top-0 bg-black`}
+					className={`${inter.className} selection:text-blue-900 selection:bg-blue-300 flex flex-col justify-between max-w-9xl md:min-w-3xl md:mx-auto top-0 bg-black`}
 				>
 					<header>
-						<NavBar>
-							<Link href="#" passHref>
-								<Image
-									src="team37-logo.svg"
-									alt="Team 37 logo"
-									width={150}
-									height={150}
+						<Navbar
+							isBordered
+							maxWidth="2xl"
+							className="fixed bg-gradient-to-br from-glassmorphism-38 to-glassmorphism-08 stroke-[#202020] backdrop-blur-xl z-50 py-2 "
+						>
+							<NavbarContent>
+								<NavbarMenuToggle
+									aria-label={
+										isMenuOpen ? "Close menu" : "Open menu"
+									}
+									className="sm:hidden"
 								/>
-							</Link>
-							<NavItemList>
-								{NAV_ITEMS.map((item) => (
-									<Link
-										href={item.href || "/"}
-										key={item.label}
-										target="_blank"
-									>
+								<NavbarBrand>
+									<Team37Logo width={150} height={150} />
+								</NavbarBrand>
+							</NavbarContent>
+							<NavbarContent className="hidden sm:flex gap-4">
+								{NAV_ITEMS.map((item, index) => (
+									<NavbarItem key={`${item}-${index}`}>
 										<ButtonNavBar>
-											{item.label}
+											<Link href={`${item.href}`}>
+												{item.label}
+											</Link>
 										</ButtonNavBar>
-									</Link>
+									</NavbarItem>
 								))}
-							</NavItemList>
-							<ButtonCta>Contact us</ButtonCta>
-						</NavBar>
+							</NavbarContent>
+							<NavbarContent justify="end">
+								<ButtonCta>Contact us</ButtonCta>
+							</NavbarContent>
+							<NavbarMenu className="z-50">
+								{NAV_ITEMS.map((item, index) => (
+									<NavbarMenuItem key={`${item}-${index}`}>
+										<ButtonNavBar>
+											<Link href={`${item.href}`}>
+												{item.label}
+											</Link>
+										</ButtonNavBar>
+									</NavbarMenuItem>
+								))}
+							</NavbarMenu>
+						</Navbar>
 					</header>
 					{children}
 					<footer className="flex flex-col gap-12 z-40 align-middle pb-6 justify-center mx-7">
