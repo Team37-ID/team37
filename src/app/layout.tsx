@@ -35,11 +35,6 @@ import { useState } from "react"
 
 const inter = Inter({ subsets: ["latin"] })
 
-export const metadata = {
-	title: "Team 37",
-	description: "Team 37 home page",
-}
-
 export default function RootLayout({
 	children,
 }: {
