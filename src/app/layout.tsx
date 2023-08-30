@@ -1,13 +1,8 @@
-"use client"
-
 import Script from "next/script"
 import "./globals.css"
 import { Inter } from "next/font/google"
 import Image from "next/image"
 import Link from "next/link"
-import { NAV_ITEMS } from "@/components/NavigationBar/itemsList"
-import ButtonNavBar from "@/components/ui/button/ButtonNavBar"
-import ButtonCta from "@/components/ui/button/ButtonCta"
 import {
 	Phone,
 	Mail,
@@ -21,27 +16,20 @@ import {
 	GitHub,
 } from "iconoir-react"
 import { Providers } from "./providers"
-import {
-	Navbar,
-	NavbarBrand,
-	NavbarContent,
-	NavbarItem,
-	NavbarMenuToggle,
-	NavbarMenuItem,
-	NavbarMenu,
-} from "@nextui-org/react"
-import Team37Logo from "@/components/logo/Team37Logo"
-import { useState } from "react"
+import NavBar from "@/components/NavigationBar/NavBar"
 
 const inter = Inter({ subsets: ["latin"] })
+
+export const metadata = {
+	title: "Team 37",
+	description: "Team 37 home page",
+}
 
 export default function RootLayout({
 	children,
 }: {
 	children: React.ReactNode
 }) {
-	const [isMenuOpen, setIsMenuOpen] = useState(false)
-
 	return (
 		<html lang="en">
 			<head>
@@ -69,48 +57,7 @@ export default function RootLayout({
 					className={`${inter.className} selection:text-blue-900 selection:bg-blue-300 flex flex-col justify-between max-w-9xl md:min-w-3xl md:mx-auto top-0 bg-black`}
 				>
 					<header>
-						<Navbar
-							isBordered
-							maxWidth="2xl"
-							className="fixed bg-gradient-to-br from-glassmorphism-38 to-glassmorphism-08 stroke-[#202020] backdrop-blur-xl z-50 py-2 "
-						>
-							<NavbarContent>
-								<NavbarMenuToggle
-									aria-label={
-										isMenuOpen ? "Close menu" : "Open menu"
-									}
-									className="sm:hidden"
-								/>
-								<NavbarBrand>
-									<Team37Logo width={150} height={150} />
-								</NavbarBrand>
-							</NavbarContent>
-							<NavbarContent className="hidden sm:flex gap-4">
-								{NAV_ITEMS.map((item, index) => (
-									<NavbarItem key={`${item}-${index}`}>
-										<ButtonNavBar>
-											<Link href={`${item.href}`}>
-												{item.label}
-											</Link>
-										</ButtonNavBar>
-									</NavbarItem>
-								))}
-							</NavbarContent>
-							<NavbarContent justify="end">
-								<ButtonCta>Contact us</ButtonCta>
-							</NavbarContent>
-							<NavbarMenu className="z-50">
-								{NAV_ITEMS.map((item, index) => (
-									<NavbarMenuItem key={`${item}-${index}`}>
-										<ButtonNavBar>
-											<Link href={`${item.href}`}>
-												{item.label}
-											</Link>
-										</ButtonNavBar>
-									</NavbarMenuItem>
-								))}
-							</NavbarMenu>
-						</Navbar>
+						<NavBar />
 					</header>
 					{children}
 					<footer className="flex flex-col gap-12 z-40 align-middle pb-6 justify-center mx-7">
