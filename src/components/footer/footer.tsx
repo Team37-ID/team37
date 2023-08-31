@@ -15,6 +15,7 @@ import {
 	Dribbble,
 	GitHub,
 } from "iconoir-react"
+import { NAV_ITEMS } from "../NavigationBar/itemsList"
 
 const Footer = () => {
 	return (
@@ -60,36 +61,15 @@ const Footer = () => {
 						Sitelinks
 					</h3>
 					<ul className="flex flex-col gap-4 text-zinc-300">
-						<Link
-							className="hover:text-zinc-50 transition duration-300"
-							href="/about"
-						>
-							<li>About</li>
-						</Link>
-						<Link
-							className="hover:text-zinc-50 transition duration-300"
-							href="/services"
-						>
-							<li>Services</li>
-						</Link>
-						<Link
-							className="hover:text-zinc-50 transition duration-300"
-							href="/projects"
-						>
-							<li>Projects</li>
-						</Link>
-						<Link
-							className="hover:text-zinc-50 transition duration-300"
-							href="/blog"
-						>
-							<li>Blog</li>
-						</Link>
-						<Link
-							className="hover:text-zinc-50 transition duration-300"
-							href="/careers"
-						>
-							<li>Careers</li>
-						</Link>
+						{NAV_ITEMS.map((item, index) => (
+							<Link
+								key={`${item}-${index}`}
+								className="hover:text-zinc-50 transition duration-300"
+								href={`${item.href}`}
+							>
+								<li>{item.label}</li>
+							</Link>
+						))}
 					</ul>
 				</section>
 				<section className="flex flex-col gap-6">
