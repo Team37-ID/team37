@@ -21,23 +21,6 @@ import Services from "@/components/content/home/team37-services/Services"
 import Jargon from "@/components/content/home/Jargon"
 
 export default function Home() {
-	const mobileBreakpoint = 763
-	const [isMobileView, setMobileView] = useState(false)
-
-	useEffect(() => {
-		const handleResize = () => {
-			setMobileView(window.innerWidth < mobileBreakpoint)
-		}
-
-		handleResize()
-
-		window.addEventListener("resize", handleResize)
-
-		return () => {
-			window.removeEventListener("resize", handleResize)
-		}
-	}, [])
-
 	return (
 		<main className="flex flex-col justify-between min-h-screen gap-64 my-64 mx-7 md:my-72">
 			<section className="flex flex-col items-center justify-center landing-page">
