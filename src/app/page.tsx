@@ -1,19 +1,5 @@
 "use client"
 
-import ButtonCta from "@/components/ui/button/ButtonCta"
-import Image from "next/image"
-import Link from "next/link"
-import ButtonNormal from "@/components/ui/button/ButtonNormal"
-import {
-	ArrowRight,
-	Code,
-	DesignPencil,
-	PcFirewall,
-	Community,
-	GraduationCap,
-	Brain,
-} from "iconoir-react"
-import { useEffect, useState } from "react"
 import LandingPage from "@/components/content/home/LandingPage"
 import Projects from "@/components/content/home/team37-project/Projects"
 import Testimonials from "@/components/content/home/team37-testimonials/Testimonials"
