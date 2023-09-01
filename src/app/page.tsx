@@ -15,8 +15,8 @@ import {
 } from "iconoir-react"
 import { useEffect, useState } from "react"
 import LandingPage from "@/components/content/home/LandingPage"
-import Projects from "@/components/content/home/project/Projects"
-import Testimonials from "@/components/content/home/testimonials/Testimonials"
+import Projects from "@/components/content/home/team37-project/Projects"
+import Testimonials from "@/components/content/home/team37-testimonials/Testimonials"
 
 export default function Home() {
 	const mobileBreakpoint = 763
