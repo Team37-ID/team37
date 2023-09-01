@@ -3,7 +3,7 @@
 import React from "react"
 import Link from "next/link"
 import Team37Logo from "../logo/Team37Logo"
-import { NAV_ITEMS } from "../NavigationBar/itemsList"
+import { NAV_ITEMS } from "../navbar/itemsList"
 import { SOCIAL_ITEMS_LIST } from "./socialItemsList"
 import { CONTACT_ITEMS_LIST } from "./contactItemsList"
 import { Link as LinkNextUi } from "@nextui-org/react"
