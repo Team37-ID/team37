@@ -36,6 +36,7 @@ const ButtonCta = ({ children }: Props) => {
 					onOpenChange={onOpenChange}
 					placement="auto"
 					isDismissable={false}
+					scrollBehavior="inside"
 					size="xl"
 				>
 					<ModalContent>
