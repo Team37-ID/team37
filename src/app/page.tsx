@@ -8,7 +8,7 @@ import Jargon from "@/components/content/home/Jargon"
 
 export default function Home() {
 	return (
-		<main className="flex flex-col justify-between min-h-screen gap-64 my-64 mx-7 md:my-72">
+		<main className="flex flex-col justify-between min-h-screen gap-64 my-64 mx-4 md:my-72">
 			<section className="flex flex-col items-center justify-center landing-page">
 				<LandingPage />
 			</section>
