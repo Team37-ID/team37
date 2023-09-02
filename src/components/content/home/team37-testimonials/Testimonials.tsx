@@ -1,6 +1,9 @@
+import { useMobileView } from "@/hooks/useMobileView"
 import Image from "next/image"
 
 const Testimonials = () => {
+	const { isMobileView } = useMobileView({ breakpoint: 763 })
+
 	return (
 		<>
 			<h1 className="font-medium text-white uppercase text-sm leading-5 md:text-xl md:leading-7">
@@ -17,7 +20,7 @@ const Testimonials = () => {
 							success stories yourself!
 						</p>
 					</div>
-					<div className="flex flex-col md:flex-row w-full gap-6 md:justify-between">
+					<div className="flex flex-col items-center align-middle md:flex-row w-full gap-6 md:justify-between">
 						<div className="flex flex-col items-center md:items-start gap-6 client-testi w-[327px] md:w-[445px]">
 							<p className="font-normal text-gray-300 text-sm leading-5 text-center md:text-left md:text-lg md:leading-7">
 								&#34;Team 37&#39;s services have been nothing
@@ -30,60 +33,8 @@ const Testimonials = () => {
 								<Image
 									className="rounded-full"
 									src="/avatar.png"
-									width={48}
-									height={48}
-									alt="Picture of client"
-								/>
-								<div>
-									<h1 className="font-bold text-base leading-6 text-white capitalize md:text-lg md:leading-7">
-										Rebecca Turner
-									</h1>
-									<h2 className="font-normal text-xs leading-4 md:text-sm md:leading-5 text-stone-400">
-										CFO of Cozylila
-									</h2>
-								</div>
-							</div>
-						</div>
-						<div className="flex flex-col items-center md:items-start gap-6 client-testi w-[327px] md:w-[445px]">
-							<p className="font-normal text-gray-300 text-sm leading-5 text-center md:text-left md:text-lg md:leading-7">
-								&#34;Team 37&#39;s expertise has proven
-								invaluable in optimizing our financial
-								processes. Their data-driven approach and
-								cost-saving strategies have significantly
-								improved our bottom line.&#34;
-							</p>
-							<div className="flex flex-row items-center align-midle justify-center md:items-start gap-4 md:gap-6">
-								<Image
-									className="rounded-full"
-									src="/avatar.png"
-									width={48}
-									height={48}
-									alt="Picture of client"
-								/>
-								<div>
-									<h1 className="font-bold text-base leading-6 text-white capitalize md:text-lg md:leading-7">
-										Rebecca Turner
-									</h1>
-									<h2 className="font-normal text-xs leading-4 md:text-sm md:leading-5 text-stone-400">
-										CFO of Cozylila
-									</h2>
-								</div>
-							</div>
-						</div>
-						<div className="flex flex-col items-center md:items-start gap-6 client-testi w-[327px] md:w-[445px]">
-							<p className="font-normal text-gray-300 text-sm leading-5 text-center md:text-left md:text-lg md:leading-7">
-								&#34;Working with Team 37 has been a
-								game-changer for our HR department. Their talent
-								acquisition and development solutions have
-								brought in top-tier talent and enhanced our
-								workforce capabilities.&#34;
-							</p>
-							<div className="flex flex-row items-center align-midle justify-center md:items-start gap-4 md:gap-6">
-								<Image
-									className="rounded-full"
-									src="/avatar.png"
-									width={48}
-									height={48}
+									width={isMobileView ? 32 : 48}
+									height={isMobileView ? 32 : 48}
 									alt="Picture of client"
 								/>
 								<div>
