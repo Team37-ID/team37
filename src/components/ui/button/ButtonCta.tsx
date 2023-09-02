@@ -119,12 +119,13 @@ const ButtonCta = ({ children }: Props) => {
 								<Button
 									size="lg"
 									color="danger"
+									radius="sm"
 									variant="ghost"
 									onPress={onClose}
 								>
 									Close
 								</Button>
-								<Button size="lg" color="primary">
+								<Button size="lg" color="primary" radius="sm">
 									{/* TODO: Add submit form event */}
 									Submit Form
 								</Button>
