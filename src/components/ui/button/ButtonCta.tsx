@@ -34,7 +34,7 @@ const ButtonCta = ({ children }: Props) => {
 					isOpen={isOpen}
 					backdrop="blur"
 					onOpenChange={onOpenChange}
-					placement="center"
+					placement="auto"
 					isDismissable={false}
 					size="xl"
 				>
