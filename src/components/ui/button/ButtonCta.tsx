@@ -17,6 +17,9 @@ import {
 import countries from "@/data/countries.json"
 import dynamic from "next/dynamic"
 const EmailInput = dynamic(() => import("@/components/ui/input/EmailInput"))
+const PhoneNumInput = dynamic(
+	() => import("@/components/ui/input/PhoneNumInput")
+)
 
 interface Props {
 	children: React.ReactNode
@@ -67,8 +70,9 @@ const ButtonCta = ({ children }: Props) => {
 										description="Ex: Doe"
 									/>
 								</div>
-								<div>
+								<div className="flex flex-col md:flex-row gap-4">
 									<EmailInput />
+									<PhoneNumInput />
 								</div>
 								<Select
 									items={countries}
