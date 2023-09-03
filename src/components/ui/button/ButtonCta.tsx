@@ -10,9 +10,13 @@ import {
 	ModalFooter,
 	Button,
 	Link,
+	Select,
+	SelectItem,
+	Avatar,
 } from "@nextui-org/react"
-import React from "react"
-import EmailInput from "../input/EmailInput"
+import countries from "@/data/countries.json"
+import dynamic from "next/dynamic"
+const EmailInput = dynamic(() => import("@/components/ui/input/EmailInput"))
 
 interface Props {
 	children: React.ReactNode
@@ -66,6 +70,28 @@ const ButtonCta = ({ children }: Props) => {
 								<div>
 									<EmailInput />
 								</div>
+								<Select
+									items={countries}
+									label="Which country do you come from?"
+									variant="underlined"
+									placeholder="Select your country"
+								>
+									{countries.map((item) => (
+										<SelectItem
+											key={`${item.id}`}
+											textValue={item.en}
+											startContent={
+												<Avatar
+													alt={item.en}
+													className="w-6 h-6"
+													src={`https://flagcdn.com/${item.alpha2}.svg`}
+												/>
+											}
+										>
+											{item.en}
+										</SelectItem>
+									))}
+								</Select>
 								<RadioGroup
 									label="Project Type"
 									orientation="horizontal"
