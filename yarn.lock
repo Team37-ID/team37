@@ -2220,6 +2220,18 @@
     legacy-swc-helpers "npm:@swc/helpers@=0.4.14"
     tslib "^2.4.0"
 
+"@tanstack/react-virtual@^3.0.0-beta.57":
+  version "3.0.0-beta.57"
+  resolved "https://registry.yarnpkg.com/@tanstack/react-virtual/-/react-virtual-3.0.0-beta.57.tgz#efa0497144f21e8195448cac43082caa20c367f0"
+  integrity sha512-f5cVU4m9TAoK5NBOosq2qobN316wwFd9jyCdQq82SzjmV9f8w1cdcqk/JnFoSKzwc7s2HduymsIDSjKNjubNbQ==
+  dependencies:
+    "@tanstack/virtual-core" "3.0.0-beta.57"
+
+"@tanstack/virtual-core@3.0.0-beta.57":
+  version "3.0.0-beta.57"
+  resolved "https://registry.yarnpkg.com/@tanstack/virtual-core/-/virtual-core-3.0.0-beta.57.tgz#5530faea61b64df3f691d987f99172ae9bb08080"
+  integrity sha512-vEpHaCBiAMzaIk/IQ4XnusNNscaDCLCDLdZpHledSSOHh9/eUfoIVlHZrEfNg7dG7Gp5KzdwozY0aISLYBqjiA==
+
 "@types/color-convert@*":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@types/color-convert/-/color-convert-2.0.0.tgz#8f5ee6b9e863dcbee5703f5a517ffb13d3ea4e22"
