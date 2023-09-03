@@ -1,7 +1,6 @@
 "use client"
 
 import { Input } from "@nextui-org/react"
-import { clear } from "console"
 import { useMemo, useState } from "react"
 
 const EmailInput = () => {
