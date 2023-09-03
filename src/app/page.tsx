@@ -1,10 +1,21 @@
 "use client"
 
 import LandingPage from "@/components/content/home/LandingPage"
-import Projects from "@/components/content/home/team37-project/Projects"
-import Testimonials from "@/components/content/home/team37-testimonials/Testimonials"
-import Services from "@/components/content/home/team37-services/Services"
-import Jargon from "@/components/content/home/Jargon"
+import dynamic from "next/dynamic"
+
+const Projects = dynamic(
+	() => import("@/components/content/home/team37-project/Projects")
+)
+
+const Testimonials = dynamic(
+	() => import("@/components/content/home/team37-testimonials/Testimonials")
+)
+
+const Services = dynamic(
+	() => import("@/components/content/home/team37-services/Services")
+)
+
+const Jargon = dynamic(() => import("@/components/content/home/Jargon"))
 
 export default function Home() {
 	return (
