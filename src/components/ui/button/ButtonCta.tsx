@@ -21,7 +21,7 @@ const PhoneNumInput = dynamic(
 	() => import("@/components/ui/input/PhoneNumInput")
 )
 
-interface Props {
+type Props = {
 	children: React.ReactNode
 }
 

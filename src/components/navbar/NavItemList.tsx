@@ -1,6 +1,6 @@
 import Link from "next/link"
 
-interface NavItemProps {
+type NavItemProps = {
 	children: React.ReactNode | Array<React.ReactElement>
 }
 
