@@ -5,7 +5,6 @@ import {
 	ModalContent,
 	ModalHeader,
 	Input,
-	useDisclosure,
 	RadioGroup,
 	Radio,
 	ModalFooter,
@@ -25,8 +24,11 @@ const PhoneNumInput = dynamic(
 	() => import("@/components/ui/input/PhoneNumInput")
 )
 
-const ContactUs = () => {
-	const { onClose } = useDisclosure()
+type Props = {
+	onClose: () => void
+}
+
+const ContactUs = ({ onClose }: Props) => {
 	// TODO: Instructions below!
 	// Create a custom hooks name useCountryList() and use it here
 	// Use the hook to get the list of countries from the countries.json file
