@@ -26,7 +26,7 @@ const ButtonCta = ({ children }: Props) => {
 					scrollBehavior="inside"
 					size="xl"
 				>
-					<ContactUs />
+					<ContactUs onClose={onClose} />
 				</Modal>
 			</div>
 		</div>
