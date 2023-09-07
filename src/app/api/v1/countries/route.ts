@@ -16,7 +16,7 @@ export async function GET(request: NextResponse) {
 		if (!data) {
 			console.log("No data found in Supabase")
 			return NextResponse.json({
-				error: "No data available00000",
+				error: "No data available",
 			})
 		}
 
