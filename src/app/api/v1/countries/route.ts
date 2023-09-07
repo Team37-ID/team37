@@ -3,7 +3,7 @@ import NextSupabase from "@/app/supabase/supabase"
 
 export async function GET(request: NextResponse) {
 	try {
-		const { data, error } = await NextSupabase.from("country").select("id")
+		const { data, error } = await NextSupabase.from("country").select("*")
 		const length = data?.length
 
 		if (error) {
