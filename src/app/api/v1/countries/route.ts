@@ -19,6 +19,10 @@ export async function GET(request: NextResponse) {
 			offset = Math.min(offset, 241)
 		}
 
+		if (limit === offset) {
+			limit = 0
+		}
+
 		const nextOffset = offset + limit
 		const prevOffset = offset - limit
 		const next =
@@ -29,6 +33,7 @@ export async function GET(request: NextResponse) {
 			offset === 0
 				? null
 				: `https://team37.co/api/v1/countries?offset=${prevOffset}&limit=${limit}`
+
 		const { data, error } = await NextSupabase.from("country")
 			.select("*")
 			.range(limit as number, (offset as number) - 1)
