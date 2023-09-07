@@ -4,6 +4,7 @@ import NextSupabase from "@/app/supabase/supabase"
 export async function GET(request: NextResponse) {
 	try {
 		const { data, error } = await NextSupabase.from("country").select("id")
+		const length = data?.length
 
 		if (error) {
 			console.log("Supabase error: ", error.message)
@@ -19,7 +20,7 @@ export async function GET(request: NextResponse) {
 			})
 		}
 
-		return NextResponse.json(data)
+		return NextResponse.json({ length, data })
 	} catch (err) {
 		console.log("Internal server error: ", err)
 		return NextResponse.json({ error: "An internal server error occured." })
