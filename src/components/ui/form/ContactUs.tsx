@@ -17,8 +17,9 @@ import {
 import countries from "@/data/countries.json"
 import dynamic from "next/dynamic"
 import { useVirtualizer } from "@tanstack/react-virtual"
-import { useRef } from "react"
+import { useRef, useState } from "react"
 import { useInfiniteScroll } from "@nextui-org/use-infinite-scroll"
+import { useCountryList } from "@/hooks/useCountryList"
 const EmailInput = dynamic(() => import("@/components/ui/input/EmailInput"))
 const PhoneNumInput = dynamic(
 	() => import("@/components/ui/input/PhoneNumInput")
@@ -29,29 +30,17 @@ type Props = {
 }
 
 const ContactUs = ({ onClose }: Props) => {
-	// TODO: Instructions below!
-	// Create a custom hooks name useCountryList() and use it here
-	// Use the hook to get the list of countries from the countries.json file
-	// Apply the value to the useInfiniteScroll() hook
-	const [, infiniteScrollRef] = useInfiniteScroll({
-		hasMore: true,
-		onLoadMore: () => {
-			console.log("load more")
-		},
-		shouldUseLoader: false,
-	})
-	const scrollerRef = useRef<HTMLElement>(null)
-	const virtualizer = useVirtualizer({
-		count: countries.length,
-		getScrollElement: () => scrollerRef.current,
-		estimateSize: () => 35,
-		// The overscan use to render the items outside the viewport
-		// Expected behavior: virtualizer will load more items as it scrolls down
-		overscan: 10,
+	const [isOpen, setIsOpen] = useState(false)
+	const { items, hasMore, isLoading, onLoadMore } = useCountryList({
+		fetchDelay: 1500,
 	})
 
-	const virtualItems = virtualizer.getVirtualItems()
-	const totalSize = virtualizer.getTotalSize()
+	const [, scrollerRef] = useInfiniteScroll({
+		hasMore,
+		isEnabled: isOpen,
+		shouldUseLoader: false,
+		onLoadMore,
+	})
 
 	return (
 		<>
@@ -84,31 +73,28 @@ const ContactUs = ({ onClose }: Props) => {
 							<PhoneNumInput />
 						</div>
 						<Select
-							items={countries}
+							items={items}
 							label="Which country do you come from?"
 							variant="underlined"
 							scrollRef={scrollerRef}
 							placeholder="Select your country"
-							style={{ height: `${totalSize}` }}
+							onOpenChange={setIsOpen}
 						>
-							{virtualItems.map((virtualItem) => {
-								const countryItem = countries[virtualItem.index]
-								return (
-									<SelectItem
-										key={`${virtualItem.key}`}
-										textValue={countryItem.en}
-										startContent={
-											<Avatar
-												alt={countryItem.en}
-												className="w-6 h-6"
-												src={`https://flagcdn.com/${countryItem.alpha2}.svg`}
-											/>
-										}
-									>
-										{countryItem.en}
-									</SelectItem>
-								)
-							})}
+							{(item) => (
+								<SelectItem
+									key={`${item.id}`}
+									textValue={item.country_name}
+									startContent={
+										<Avatar
+											alt={item.country_name}
+											className="w-6 h-6"
+											src={`https://flagcdn.com/${item.alpha2}.svg`}
+										/>
+									}
+								>
+									{item.country_name}
+								</SelectItem>
+							)}
 						</Select>
 						<RadioGroup
 							label="Project Type"
