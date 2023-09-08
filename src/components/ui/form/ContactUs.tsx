@@ -14,10 +14,8 @@ import {
 	SelectItem,
 	Avatar,
 } from "@nextui-org/react"
-import countries from "@/data/countries.json"
 import dynamic from "next/dynamic"
-import { useVirtualizer } from "@tanstack/react-virtual"
-import { useRef, useState } from "react"
+import { useState } from "react"
 import { useInfiniteScroll } from "@nextui-org/use-infinite-scroll"
 import { useCountryList } from "@/hooks/useCountryList"
 const EmailInput = dynamic(() => import("@/components/ui/input/EmailInput"))
