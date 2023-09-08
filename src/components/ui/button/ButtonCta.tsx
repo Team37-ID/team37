@@ -1,5 +1,6 @@
 import { Modal, useDisclosure } from "@nextui-org/react"
 import ContactUs from "@/components/ui/form/ContactUs"
+import React from "react"
 
 interface Props {
 	children: React.ReactNode
