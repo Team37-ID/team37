@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server"
+import { NextRequest, NextResponse } from "next/server"
 import NextSupabase from "@/app/api/supabase/supabase"
 
 interface Props {
@@ -23,7 +23,7 @@ function generateURLWithOffsetAndLimit({ offset, limit }: Props) {
 	return `http://localhost:3000/api/v1/countries?offset=${offset}&limit=${limit}`
 }
 
-export async function GET(request: NextResponse) {
+export async function GET(request: NextRequest) {
 	try {
 		const totalCountry = MAX_OFFSET_LIMIT
 		const { searchParams } = new URL(request.url)
