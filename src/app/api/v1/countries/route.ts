@@ -20,7 +20,7 @@ function isValidOffsetAndLimit({ offset, limit }: Props) {
 }
 
 function generateURLWithOffsetAndLimit({ offset, limit }: Props) {
-	return `http://localhost:3000/api/v1/countries?offset=${offset}&limit=${limit}`
+	return `https://team37.co/api/v1/countries?offset=${offset}&limit=${limit}`
 }
 
 export async function GET(request: NextRequest) {
