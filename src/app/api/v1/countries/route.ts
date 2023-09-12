@@ -50,9 +50,8 @@ export async function GET(request: NextRequest) {
 				  })
 				: null
 
-		const { data, error } = await NextSupabase.from("country")
-			.select("*")
-			.range(from, to - 1)
+		const { data, error } = await NextSupabase.from("test").select("*")
+		// .range(from, to - 1)
 		const length = data?.length
 
 		if (error) {
