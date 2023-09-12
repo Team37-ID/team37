@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server"
-import NextSupabase from "@/app/api/supabase/supabase"
+import NextSupabase from "@/app/supabase/supabase"
 
 interface Props {
 	offset: number
