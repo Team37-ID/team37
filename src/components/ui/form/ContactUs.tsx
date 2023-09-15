@@ -12,16 +12,10 @@ import {
 	Link,
 	Select,
 	SelectItem,
-	Avatar,
 } from "@nextui-org/react"
-import countries from "@/data/countries.json"
 import services from "@/data/services.json"
 import Image from "next/image"
 import dynamic from "next/dynamic"
-import { useVirtualizer } from "@tanstack/react-virtual"
-import { useRef, useState } from "react"
-import { useInfiniteScroll } from "@nextui-org/use-infinite-scroll"
-import { useCountryList } from "@/hooks/useCountryList"
 const EmailInput = dynamic(() => import("@/components/ui/input/EmailInput"))
 const PhoneNumInput = dynamic(
 	() => import("@/components/ui/input/PhoneNumInput")
@@ -32,18 +26,6 @@ type Props = {
 }
 
 const ContactUs = ({ onClose }: Props) => {
-	// const [isOpen, setIsOpen] = useState(false)
-	// const { items, hasMore, isLoading, onLoadMore } = useCountryList({
-	// 	fetchDelay: 1500,
-	// })
-
-	// const [, scrollerRef] = useInfiniteScroll({
-	// 	hasMore,
-	// 	isEnabled: isOpen,
-	// 	shouldUseLoader: false,
-	// 	onLoadMore,
-	// })
-
 	return (
 		<>
 			<ModalContent>
