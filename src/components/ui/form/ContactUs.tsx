@@ -16,6 +16,8 @@ import {
 import services from "@/data/services.json"
 import Image from "next/image"
 import dynamic from "next/dynamic"
+import { useState, FormEvent } from "react"
+const NameInput = dynamic(() => import("@/components/ui/input/NameInput"))
 const EmailInput = dynamic(() => import("@/components/ui/input/EmailInput"))
 const PhoneNumInput = dynamic(
 	() => import("@/components/ui/input/PhoneNumInput")
@@ -26,6 +28,34 @@ type Props = {
 }
 
 const ContactUs = ({ onClose }: Props) => {
+	const [isFirstNameFieldEmpty, setIsFirstNameFieldEmpty] =
+		useState<boolean>(false)
+	const [isLastNameFieldEmpty, setIsLastNameFieldEmpty] =
+		useState<boolean>(false)
+	const [firstNameFormValue, setFirstNameFormValue] = useState<string>("")
+	const [lastNameFormValue, setLastNameFormValue] = useState<string>("")
+	const [isOverLimit, setIsOverLimit] = useState<boolean>(false)
+
+	const handleFirstNameFormChange = (val: string) => {
+		setFirstNameFormValue(val)
+	}
+
+	const handleLastNameFormChange = (val: string) => {
+		setLastNameFormValue(val)
+	}
+
+	const handleSubmit = (e: FormEvent) => {
+		e.preventDefault()
+
+		if (firstNameFormValue === "" && lastNameFormValue === "") {
+			setIsFirstNameFieldEmpty(true)
+			setIsLastNameFieldEmpty(true)
+		} else {
+			setIsFirstNameFieldEmpty(firstNameFormValue === "")
+			setIsLastNameFieldEmpty(lastNameFormValue === "")
+		}
+	}
+
 	return (
 		<>
 			<ModalContent>
@@ -35,21 +65,37 @@ const ContactUs = ({ onClose }: Props) => {
 				<ModalBody>
 					<div className="flex flex-col gap-6">
 						<div className="flex flex-col md:flex-row gap-4">
-							<Input
-								type="text"
-								isRequired
-								variant="underlined"
+							<NameInput
 								placeholder="Your first name"
 								label="First Name"
-								description="Ex: John"
+								desc="Ex: John"
+								value={firstNameFormValue}
+								onValueChange={handleFirstNameFormChange}
+								validationState={
+									isOverLimit || isFirstNameFieldEmpty
+										? "invalid"
+										: "valid"
+								}
+								errorMessage={
+									(isOverLimit || isFirstNameFieldEmpty) &&
+									"Please enter a value! (Max 100 characters)"
+								}
 							/>
-							<Input
-								type="text"
-								isRequired
-								variant="underlined"
+							<NameInput
 								placeholder="Your last name"
 								label="Last Name"
-								description="Ex: Doe"
+								desc="Ex: Doe"
+								value={lastNameFormValue}
+								onValueChange={handleLastNameFormChange}
+								validationState={
+									isOverLimit || isLastNameFieldEmpty
+										? "invalid"
+										: "valid"
+								}
+								errorMessage={
+									(isOverLimit || isLastNameFieldEmpty) &&
+									"Please enter a value! (Max 100 characters)"
+								}
 							/>
 						</div>
 						<div className="flex flex-col md:flex-row gap-4">
@@ -146,8 +192,12 @@ const ContactUs = ({ onClose }: Props) => {
 						>
 							Close
 						</Button>
-						<Button size="lg" color="primary" radius="sm">
-							{/* TODO: Add submit form event */}
+						<Button
+							size="lg"
+							color="primary"
+							radius="sm"
+							onClick={handleSubmit}
+						>
 							Submit Form
 						</Button>
 					</div>
