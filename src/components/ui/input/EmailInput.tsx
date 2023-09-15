@@ -25,7 +25,7 @@ const EmailInput = () => {
 				placeholder="johndoe@example.com"
 				label="Email"
 				description="We'll never share your email with anyone else."
-				color={validationState === "invalid" ? "danger" : "success"}
+				color={validationState === "invalid" ? "danger" : "default"}
 				errorMessage={
 					validationState === "invalid" &&
 					"Please enter a valid email"

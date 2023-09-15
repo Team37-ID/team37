@@ -25,7 +25,7 @@ const PhoneNumInput = () => {
 				placeholder="+6281212345678"
 				label="Phone Number"
 				description="Hint: Use your country code in front of the number"
-				color={validationState === "invalid" ? "danger" : "success"}
+				color={validationState === "invalid" ? "danger" : "default"}
 				errorMessage={
 					validationState === "invalid" &&
 					"Please enter a valid number"
