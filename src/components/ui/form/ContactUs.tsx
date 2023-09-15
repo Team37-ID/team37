@@ -15,6 +15,8 @@ import {
 	Avatar,
 } from "@nextui-org/react"
 import countries from "@/data/countries.json"
+import services from "@/data/services.json"
+import Image from "next/image"
 import dynamic from "next/dynamic"
 import { useVirtualizer } from "@tanstack/react-virtual"
 import { useRef, useState } from "react"
@@ -30,17 +32,17 @@ type Props = {
 }
 
 const ContactUs = ({ onClose }: Props) => {
-	const [isOpen, setIsOpen] = useState(false)
-	const { items, hasMore, isLoading, onLoadMore } = useCountryList({
-		fetchDelay: 1500,
-	})
+	// const [isOpen, setIsOpen] = useState(false)
+	// const { items, hasMore, isLoading, onLoadMore } = useCountryList({
+	// 	fetchDelay: 1500,
+	// })
 
-	const [, scrollerRef] = useInfiniteScroll({
-		hasMore,
-		isEnabled: isOpen,
-		shouldUseLoader: false,
-		onLoadMore,
-	})
+	// const [, scrollerRef] = useInfiniteScroll({
+	// 	hasMore,
+	// 	isEnabled: isOpen,
+	// 	shouldUseLoader: false,
+	// 	onLoadMore,
+	// })
 
 	return (
 		<>
@@ -73,26 +75,33 @@ const ContactUs = ({ onClose }: Props) => {
 							<PhoneNumInput />
 						</div>
 						<Select
-							items={items}
-							label="Which country do you come from?"
+							items={services}
+							label="What service can we help you?"
 							variant="underlined"
-							scrollRef={scrollerRef}
-							placeholder="Select your country"
-							onOpenChange={setIsOpen}
+							placeholder="Development, Design, Security, etc.."
 						>
-							{(item) => (
+							{(service) => (
 								<SelectItem
-									key={`${item.id}`}
-									textValue={item.country_name}
-									startContent={
-										<Avatar
-											alt={item.country_name}
-											className="w-6 h-6"
-											src={`https://flagcdn.com/${item.alpha2}.svg`}
-										/>
-									}
+									key={`${service.id}`}
+									textValue={service.name}
 								>
-									{item.country_name}
+									<div className="flex flex-row gap-4 items-middle align-middle">
+										<Image
+											src={service.logo}
+											alt={service.name}
+											width={service.width}
+											height={service.height}
+											className="flex align-middle justify-center items-center"
+										/>
+										<div className="flex flex-col">
+											<p className="text-sm font-medium text-white">
+												{service.name}
+											</p>
+											<p className="text-xs font-light text-gray-400">
+												{service.desc}
+											</p>
+										</div>
+									</div>
 								</SelectItem>
 							)}
 						</Select>
