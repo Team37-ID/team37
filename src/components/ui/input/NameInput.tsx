@@ -4,6 +4,7 @@ import { Input } from "@nextui-org/react"
 import { ChangeEvent } from "react"
 
 type Props = {
+	color?: "default" | "primary" | "success" | "warning" | "danger" | undefined
 	placeholder: string
 	label: string
 	desc: string
@@ -15,6 +16,7 @@ type Props = {
 }
 
 const NameInput = ({
+	color,
 	placeholder,
 	label,
 	desc,
@@ -37,6 +39,7 @@ const NameInput = ({
 			validationState={validationState}
 			errorMessage={errorMessage}
 			onChange={onChange}
+			color={color}
 		/>
 	)
 }
