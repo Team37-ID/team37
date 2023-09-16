@@ -147,15 +147,15 @@ const ContactUs = ({ onClose }: Props) => {
 								type="text"
 								variant="underlined"
 								placeholder="Team 37"
-								label="Company Name"
-								description="Optional"
+								label="Company Name (optional)"
+								description="Ex: Google, Vercel, etc."
 							/>
 							<Input
 								type="text"
 								variant="underlined"
 								placeholder="Software engineer"
-								label="Job Title"
-								description="Optional"
+								label="Job Title (optional)"
+								description="Ex: CEO, Software Engineer, etc."
 							/>
 						</div>
 						<Input
