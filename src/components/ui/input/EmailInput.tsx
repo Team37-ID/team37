@@ -1,7 +1,7 @@
 "use client"
 
 import { Input } from "@nextui-org/react"
-import { useMemo, useState, ChangeEvent } from "react"
+import { ChangeEvent } from "react"
 
 type Props = {
 	color?: "default" | "primary" | "success" | "warning" | "danger" | undefined
