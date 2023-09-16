@@ -208,7 +208,7 @@ const ContactUs = ({ onClose }: Props) => {
 								color={
 									phoneNumValidation === "invalid" ||
 									isOverLimit ||
-									isEmailFieldEmpty
+									isPhoneNumFieldEmpty
 										? "danger"
 										: "default"
 								}
@@ -217,13 +217,13 @@ const ContactUs = ({ onClose }: Props) => {
 								errorMessage={
 									(phoneNumValidation === "invalid" ||
 										isOverLimit ||
-										isEmailFieldEmpty) &&
+										isPhoneNumFieldEmpty) &&
 									"Please enter a valid number! (Max 100 characters)"
 								}
 								validationState={
 									phoneNumValidation === "invalid" ||
 									isOverLimit ||
-									isEmailFieldEmpty
+									isPhoneNumFieldEmpty
 										? "invalid"
 										: "valid"
 								}
