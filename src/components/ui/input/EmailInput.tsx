@@ -11,6 +11,7 @@ type Props = {
 	onChange?: (e: ChangeEvent<HTMLInputElement>) => void
 	onValueChange?: (val: string) => void
 }
+
 const EmailInput = ({
 	color,
 	value,
