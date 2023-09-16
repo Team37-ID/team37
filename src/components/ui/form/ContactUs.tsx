@@ -16,7 +16,7 @@ import {
 import services from "@/data/services.json"
 import Image from "next/image"
 import dynamic from "next/dynamic"
-import { useState, FormEvent } from "react"
+import { useState, FormEvent, useMemo } from "react"
 const NameInput = dynamic(() => import("@/components/ui/input/NameInput"))
 const EmailInput = dynamic(() => import("@/components/ui/input/EmailInput"))
 const PhoneNumInput = dynamic(
@@ -32,8 +32,10 @@ const ContactUs = ({ onClose }: Props) => {
 		useState<boolean>(false)
 	const [isLastNameFieldEmpty, setIsLastNameFieldEmpty] =
 		useState<boolean>(false)
+	const [isEmailFieldEmpty, setIsEmailFieldEmpty] = useState<boolean>(false)
 	const [firstNameFormValue, setFirstNameFormValue] = useState<string>("")
 	const [lastNameFormValue, setLastNameFormValue] = useState<string>("")
+	const [emailFormValue, setEmailFormValue] = useState<string>("")
 	const [isOverLimit, setIsOverLimit] = useState<boolean>(false)
 
 	const handleFirstNameFormChange = (val: string) => {
@@ -44,15 +46,31 @@ const ContactUs = ({ onClose }: Props) => {
 		setLastNameFormValue(val)
 	}
 
+	const handleEmailFormChange = (val: string) => {
+		setEmailFormValue(val)
+	}
+
+	const validation = useMemo(() => {
+		const validateEmail = (val: string) =>
+			emailFormValue.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i)
+		if (emailFormValue === "") {
+			return undefined
+		}
+
+		return validateEmail(emailFormValue) ? "valid" : "invalid"
+	}, [emailFormValue])
+
 	const handleSubmit = (e: FormEvent) => {
 		e.preventDefault()
 
 		if (firstNameFormValue === "" && lastNameFormValue === "") {
 			setIsFirstNameFieldEmpty(true)
 			setIsLastNameFieldEmpty(true)
+			setIsEmailFieldEmpty(true)
 		} else {
 			setIsFirstNameFieldEmpty(firstNameFormValue === "")
 			setIsLastNameFieldEmpty(lastNameFormValue === "")
+			setIsEmailFieldEmpty(emailFormValue === "")
 		}
 	}
 
@@ -99,7 +117,30 @@ const ContactUs = ({ onClose }: Props) => {
 							/>
 						</div>
 						<div className="flex flex-col md:flex-row gap-4">
-							<EmailInput />
+							<EmailInput
+								color={
+									validation === "invalid" ||
+									isOverLimit ||
+									isEmailFieldEmpty
+										? "danger"
+										: "default"
+								}
+								onValueChange={handleEmailFormChange}
+								value={emailFormValue}
+								errorMessage={
+									(validation === "invalid" ||
+										isOverLimit ||
+										isEmailFieldEmpty) &&
+									"Please enter a valid email! (Max 100 characters)"
+								}
+								validationState={
+									validation === "invalid" ||
+									isOverLimit ||
+									isEmailFieldEmpty
+										? "invalid"
+										: "valid"
+								}
+							/>
 							<PhoneNumInput />
 						</div>
 						<Select
