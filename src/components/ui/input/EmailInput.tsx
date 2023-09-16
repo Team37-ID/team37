@@ -1,21 +1,24 @@
 "use client"
 
 import { Input } from "@nextui-org/react"
-import { useMemo, useState } from "react"
+import { useMemo, useState, ChangeEvent } from "react"
 
-const EmailInput = () => {
-	const [value, setValue] = useState("")
-
-	const validationState = useMemo(() => {
-		const validateEmail = (val: string) =>
-			value.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i)
-		if (value === "") {
-			return undefined
-		}
-
-		return validateEmail(value) ? "valid" : "invalid"
-	}, [value])
-
+type Props = {
+	color?: "default" | "primary" | "success" | "warning" | "danger" | undefined
+	value?: string
+	validationState?: "valid" | "invalid"
+	errorMessage?: string | boolean
+	onChange?: (e: ChangeEvent<HTMLInputElement>) => void
+	onValueChange?: (val: string) => void
+}
+const EmailInput = ({
+	color,
+	value,
+	validationState,
+	errorMessage,
+	onChange,
+	onValueChange,
+}: Props) => {
 	return (
 		<>
 			<Input
@@ -25,14 +28,12 @@ const EmailInput = () => {
 				placeholder="johndoe@example.com"
 				label="Email"
 				description="We'll never share your email with anyone else."
-				color={validationState === "invalid" ? "danger" : "default"}
-				errorMessage={
-					validationState === "invalid" &&
-					"Please enter a valid email"
-				}
+				color={color}
+				errorMessage={errorMessage}
 				validationState={validationState}
 				value={value}
-				onValueChange={setValue}
+				onChange={onChange}
+				onValueChange={onValueChange}
 			/>
 		</>
 	)
