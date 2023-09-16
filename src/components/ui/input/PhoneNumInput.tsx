@@ -1,21 +1,25 @@
 "use client"
 
 import { Input } from "@nextui-org/react"
-import { useMemo, useState } from "react"
+import { ChangeEvent, useMemo, useState } from "react"
 
-const PhoneNumInput = () => {
-	const [value, setValue] = useState("")
+type Props = {
+	color?: "default" | "primary" | "success" | "warning" | "danger" | undefined
+	value?: string
+	validationState?: "valid" | "invalid"
+	errorMessage?: string | boolean
+	onChange?: (e: ChangeEvent<HTMLInputElement>) => void
+	onValueChange?: (val: string) => void
+}
 
-	const validationState = useMemo(() => {
-		const validatePhoneNum = (val: string) =>
-			value.match(/^\+[0-9]{1,4}[-s./0-9]*$/i)
-		if (value === "") {
-			return undefined
-		}
-
-		return validatePhoneNum(value) ? "valid" : "invalid"
-	}, [value])
-
+const PhoneNumInput = ({
+	color,
+	value,
+	validationState,
+	errorMessage,
+	onChange,
+	onValueChange,
+}: Props) => {
 	return (
 		<>
 			<Input
@@ -25,14 +29,12 @@ const PhoneNumInput = () => {
 				placeholder="+6281212345678"
 				label="Phone Number"
 				description="Hint: Use your country code in front of the number"
-				color={validationState === "invalid" ? "danger" : "default"}
-				errorMessage={
-					validationState === "invalid" &&
-					"Please enter a valid number"
-				}
+				color={color}
+				errorMessage={errorMessage}
 				validationState={validationState}
 				value={value}
-				onValueChange={setValue}
+				onChange={onChange}
+				onValueChange={onValueChange}
 			/>
 		</>
 	)
