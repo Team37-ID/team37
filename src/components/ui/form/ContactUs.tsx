@@ -50,7 +50,7 @@ const ContactUs = ({ onClose }: Props) => {
 		setEmailFormValue(val)
 	}
 
-	const validation = useMemo(() => {
+	const emailValidation = useMemo(() => {
 		const validateEmail = (val: string) =>
 			emailFormValue.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i)
 		if (emailFormValue === "") {
@@ -119,7 +119,7 @@ const ContactUs = ({ onClose }: Props) => {
 						<div className="flex flex-col md:flex-row gap-4">
 							<EmailInput
 								color={
-									validation === "invalid" ||
+									emailValidation === "invalid" ||
 									isOverLimit ||
 									isEmailFieldEmpty
 										? "danger"
@@ -128,13 +128,13 @@ const ContactUs = ({ onClose }: Props) => {
 								onValueChange={handleEmailFormChange}
 								value={emailFormValue}
 								errorMessage={
-									(validation === "invalid" ||
+									(emailValidation === "invalid" ||
 										isOverLimit ||
 										isEmailFieldEmpty) &&
 									"Please enter a valid email! (Max 100 characters)"
 								}
 								validationState={
-									validation === "invalid" ||
+									emailValidation === "invalid" ||
 									isOverLimit ||
 									isEmailFieldEmpty
 										? "invalid"
