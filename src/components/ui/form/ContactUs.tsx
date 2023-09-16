@@ -78,6 +78,22 @@ const ContactUs = ({ onClose }: Props) => {
 		return validatePhoneNum(phoneNumFormValue) ? "valid" : "invalid"
 	}, [phoneNumFormValue])
 
+	const firstNameValidation = useMemo(() => {
+		const charLimit = 100
+
+		const isCharOverLimit = (val: string) => val.length > charLimit
+
+		return isCharOverLimit(firstNameFormValue) ? "invalid" : "valid"
+	}, [firstNameFormValue])
+
+	const lastNameValidation = useMemo(() => {
+		const charLimit = 100
+
+		const isCharOverLimit = (val: string) => val.length > charLimit
+
+		return isCharOverLimit(lastNameFormValue) ? "invalid" : "valid"
+	}, [lastNameFormValue])
+
 	const handleSubmit = (e: FormEvent) => {
 		e.preventDefault()
 
@@ -115,13 +131,24 @@ const ContactUs = ({ onClose }: Props) => {
 								value={firstNameFormValue}
 								onValueChange={handleFirstNameFormChange}
 								validationState={
-									isOverLimit || isFirstNameFieldEmpty
+									isOverLimit ||
+									isFirstNameFieldEmpty ||
+									firstNameValidation === "invalid"
 										? "invalid"
 										: "valid"
 								}
 								errorMessage={
-									(isOverLimit || isFirstNameFieldEmpty) &&
+									(isOverLimit ||
+										isFirstNameFieldEmpty ||
+										firstNameValidation === "invalid") &&
 									"Please enter a value! (Max 100 characters)"
+								}
+								color={
+									isOverLimit ||
+									isFirstNameFieldEmpty ||
+									firstNameValidation === "invalid"
+										? "danger"
+										: "default"
 								}
 							/>
 							<NameInput
@@ -131,12 +158,23 @@ const ContactUs = ({ onClose }: Props) => {
 								value={lastNameFormValue}
 								onValueChange={handleLastNameFormChange}
 								validationState={
-									isOverLimit || isLastNameFieldEmpty
+									isOverLimit ||
+									isLastNameFieldEmpty ||
+									lastNameValidation === "invalid"
 										? "invalid"
 										: "valid"
 								}
+								color={
+									isOverLimit ||
+									isLastNameFieldEmpty ||
+									lastNameValidation === "invalid"
+										? "danger"
+										: "default"
+								}
 								errorMessage={
-									(isOverLimit || isLastNameFieldEmpty) &&
+									(isOverLimit ||
+										isLastNameFieldEmpty ||
+										lastNameValidation === "invalid") &&
 									"Please enter a value! (Max 100 characters)"
 								}
 							/>
