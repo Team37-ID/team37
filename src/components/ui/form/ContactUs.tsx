@@ -33,9 +33,12 @@ const ContactUs = ({ onClose }: Props) => {
 	const [isLastNameFieldEmpty, setIsLastNameFieldEmpty] =
 		useState<boolean>(false)
 	const [isEmailFieldEmpty, setIsEmailFieldEmpty] = useState<boolean>(false)
+	const [isPhoneNumFieldEmpty, setIsPhoneNumFieldEmpty] =
+		useState<boolean>(false)
 	const [firstNameFormValue, setFirstNameFormValue] = useState<string>("")
 	const [lastNameFormValue, setLastNameFormValue] = useState<string>("")
 	const [emailFormValue, setEmailFormValue] = useState<string>("")
+	const [phoneNumFormValue, setPhoneNumFormValue] = useState<string>("")
 	const [isOverLimit, setIsOverLimit] = useState<boolean>(false)
 
 	const handleFirstNameFormChange = (val: string) => {
@@ -50,6 +53,10 @@ const ContactUs = ({ onClose }: Props) => {
 		setEmailFormValue(val)
 	}
 
+	const handlePhoneNumFormChange = (val: string) => {
+		setPhoneNumFormValue(val)
+	}
+
 	const emailValidation = useMemo(() => {
 		const validateEmail = (val: string) =>
 			emailFormValue.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i)
@@ -60,17 +67,35 @@ const ContactUs = ({ onClose }: Props) => {
 		return validateEmail(emailFormValue) ? "valid" : "invalid"
 	}, [emailFormValue])
 
+	const phoneNumValidation = useMemo(() => {
+		const validatePhoneNum = (val: string) =>
+			phoneNumFormValue.match(/^\+[0-9]{1,4}[-s./0-9]*$/i)
+
+		if (phoneNumFormValue === "") {
+			return undefined
+		}
+
+		return validatePhoneNum(phoneNumFormValue) ? "valid" : "invalid"
+	}, [phoneNumFormValue])
+
 	const handleSubmit = (e: FormEvent) => {
 		e.preventDefault()
 
-		if (firstNameFormValue === "" && lastNameFormValue === "") {
+		if (
+			firstNameFormValue === "" &&
+			lastNameFormValue === "" &&
+			emailFormValue === "" &&
+			phoneNumFormValue === ""
+		) {
 			setIsFirstNameFieldEmpty(true)
 			setIsLastNameFieldEmpty(true)
 			setIsEmailFieldEmpty(true)
+			setIsPhoneNumFieldEmpty(true)
 		} else {
 			setIsFirstNameFieldEmpty(firstNameFormValue === "")
 			setIsLastNameFieldEmpty(lastNameFormValue === "")
 			setIsEmailFieldEmpty(emailFormValue === "")
+			setIsPhoneNumFieldEmpty(phoneNumFormValue === "")
 		}
 	}
 
@@ -141,7 +166,30 @@ const ContactUs = ({ onClose }: Props) => {
 										: "valid"
 								}
 							/>
-							<PhoneNumInput />
+							<PhoneNumInput
+								color={
+									phoneNumValidation === "invalid" ||
+									isOverLimit ||
+									isEmailFieldEmpty
+										? "danger"
+										: "default"
+								}
+								onValueChange={handlePhoneNumFormChange}
+								value={phoneNumFormValue}
+								errorMessage={
+									(phoneNumValidation === "invalid" ||
+										isOverLimit ||
+										isEmailFieldEmpty) &&
+									"Please enter a valid number! (Max 100 characters)"
+								}
+								validationState={
+									phoneNumValidation === "invalid" ||
+									isOverLimit ||
+									isEmailFieldEmpty
+										? "invalid"
+										: "valid"
+								}
+							/>
 						</div>
 						<Select
 							items={services}
