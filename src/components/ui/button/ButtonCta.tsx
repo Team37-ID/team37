@@ -1,6 +1,6 @@
 import { Modal, useDisclosure } from "@nextui-org/react"
 import ContactUs from "@/components/ui/form/ContactUs"
-import React, { useState } from "react"
+import React from "react"
 
 interface Props {
 	children: React.ReactNode
@@ -8,7 +8,6 @@ interface Props {
 
 const ButtonCta = ({ children }: Props) => {
 	const { isOpen, onOpen, onClose, onOpenChange } = useDisclosure()
-	const buttonC = 67
 
 	return (
 		<div className="relative">
