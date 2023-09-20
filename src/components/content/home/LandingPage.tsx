@@ -52,13 +52,6 @@ const LandingPage = () => {
 						</h2>
 					</div>
 				</div>
-				<div className="z-20 hidden md:flex md:flex-row items-center justify-center gap-2 text-lg font-medium leading-7">
-					<span>Press</span>
-					<span className="flex items-center font-ibm-plexmono justify-center w-8 h-8 bg-gradient-to-br from-white to-[#706F6C] text-stone-700 rounded-md">
-						C
-					</span>
-					<span>to contact us</span>
-				</div>
 			</div>
 		</>
 	)
