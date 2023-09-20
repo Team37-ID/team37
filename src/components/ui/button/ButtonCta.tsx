@@ -1,6 +1,7 @@
 import { Modal, useDisclosure } from "@nextui-org/react"
 import ContactUs from "@/components/ui/form/ContactUs"
-import React from "react"
+import React, { useState } from "react"
+import { useKeyPress } from "ahooks"
 
 interface Props {
 	children: React.ReactNode
@@ -8,6 +9,10 @@ interface Props {
 
 const ButtonCta = ({ children }: Props) => {
 	const { isOpen, onOpen, onClose, onOpenChange } = useDisclosure()
+	const buttonC = 67
+	useKeyPress(buttonC, () => onOpen(), {
+		exactMatch: true,
+	})
 
 	return (
 		<div className="relative">
