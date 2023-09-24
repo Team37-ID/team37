@@ -12,6 +12,7 @@ import {
 	Link,
 	Select,
 	SelectItem,
+	Textarea,
 } from "@nextui-org/react"
 import services from "@/data/services.json"
 import Image from "next/image"
@@ -35,10 +36,12 @@ const ContactUs = ({ onClose }: Props) => {
 	const [isEmailFieldEmpty, setIsEmailFieldEmpty] = useState<boolean>(false)
 	const [isPhoneNumFieldEmpty, setIsPhoneNumFieldEmpty] =
 		useState<boolean>(false)
+	const [isIdeaFieldEmpty, setIsIdeaFieldEmpty] = useState<boolean>(false)
 	const [firstNameFormValue, setFirstNameFormValue] = useState<string>("")
 	const [lastNameFormValue, setLastNameFormValue] = useState<string>("")
 	const [emailFormValue, setEmailFormValue] = useState<string>("")
 	const [phoneNumFormValue, setPhoneNumFormValue] = useState<string>("")
+	const [ideaFormValue, setIdeaFormValue] = useState<string>("")
 	const [isOverLimit, setIsOverLimit] = useState<boolean>(false)
 
 	const handleFirstNameFormChange = (val: string) => {
@@ -285,7 +288,7 @@ const ContactUs = ({ onClose }: Props) => {
 								description="Ex: CEO, Software Engineer, etc."
 							/>
 						</div>
-						<Input
+						<Textarea
 							type="text"
 							isRequired
 							variant="underlined"
@@ -324,6 +327,14 @@ const ContactUs = ({ onClose }: Props) => {
 							color="primary"
 							radius="sm"
 							onClick={handleSubmit}
+							isDisabled={
+								firstNameFormValue === "" ||
+								lastNameFormValue === "" ||
+								emailFormValue === "" ||
+								phoneNumFormValue === ""
+									? true
+									: false
+							}
 						>
 							Submit Form
 						</Button>
