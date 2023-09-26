@@ -60,6 +60,10 @@ const ContactUs = ({ onClose }: Props) => {
 		setPhoneNumFormValue(val)
 	}
 
+	const handleIdeaFormChange = (val: string) => {
+		setIdeaFormValue(val)
+	}
+
 	const emailValidation = useMemo(() => {
 		const validateEmail = (val: string) =>
 			emailFormValue.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i)
@@ -104,17 +108,20 @@ const ContactUs = ({ onClose }: Props) => {
 			firstNameFormValue === "" &&
 			lastNameFormValue === "" &&
 			emailFormValue === "" &&
-			phoneNumFormValue === ""
+			phoneNumFormValue === "" &&
+			ideaFormValue === ""
 		) {
 			setIsFirstNameFieldEmpty(true)
 			setIsLastNameFieldEmpty(true)
 			setIsEmailFieldEmpty(true)
 			setIsPhoneNumFieldEmpty(true)
+			setIsIdeaFieldEmpty(true)
 		} else {
 			setIsFirstNameFieldEmpty(firstNameFormValue === "")
 			setIsLastNameFieldEmpty(lastNameFormValue === "")
 			setIsEmailFieldEmpty(emailFormValue === "")
 			setIsPhoneNumFieldEmpty(phoneNumFormValue === "")
+			setIsIdeaFieldEmpty(ideaFormValue === "")
 		}
 	}
 
@@ -295,6 +302,12 @@ const ContactUs = ({ onClose }: Props) => {
 							placeholder="Describe about your idea"
 							label="What is your idea?"
 							description="Ex: Business opportunity, partnership, etc."
+							value={ideaFormValue}
+							onValueChange={handleIdeaFormChange}
+							validationState={
+								isIdeaFieldEmpty ? "invalid" : "valid"
+							}
+							color={isLastNameFieldEmpty ? "danger" : "default"}
 						/>
 					</div>
 				</ModalBody>
@@ -331,7 +344,8 @@ const ContactUs = ({ onClose }: Props) => {
 								firstNameFormValue === "" ||
 								lastNameFormValue === "" ||
 								emailFormValue === "" ||
-								phoneNumFormValue === ""
+								phoneNumFormValue === "" ||
+								ideaFormValue === ""
 									? true
 									: false
 							}
