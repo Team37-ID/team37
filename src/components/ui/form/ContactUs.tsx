@@ -18,6 +18,8 @@ import services from "@/data/services.json"
 import Image from "next/image"
 import dynamic from "next/dynamic"
 import { useState, FormEvent, useMemo } from "react"
+
+// Import dynamic input components
 const NameInput = dynamic(() => import("@/components/ui/input/NameInput"))
 const EmailInput = dynamic(() => import("@/components/ui/input/EmailInput"))
 const PhoneNumInput = dynamic(
@@ -29,99 +31,73 @@ type Props = {
 }
 
 const ContactUs = ({ onClose }: Props) => {
-	const [isFirstNameFieldEmpty, setIsFirstNameFieldEmpty] =
-		useState<boolean>(false)
-	const [isLastNameFieldEmpty, setIsLastNameFieldEmpty] =
-		useState<boolean>(false)
-	const [isEmailFieldEmpty, setIsEmailFieldEmpty] = useState<boolean>(false)
-	const [isPhoneNumFieldEmpty, setIsPhoneNumFieldEmpty] =
-		useState<boolean>(false)
-	const [isIdeaFieldEmpty, setIsIdeaFieldEmpty] = useState<boolean>(false)
-	const [firstNameFormValue, setFirstNameFormValue] = useState<string>("")
-	const [lastNameFormValue, setLastNameFormValue] = useState<string>("")
-	const [emailFormValue, setEmailFormValue] = useState<string>("")
-	const [phoneNumFormValue, setPhoneNumFormValue] = useState<string>("")
-	const [ideaFormValue, setIdeaFormValue] = useState<string>("")
-	const [isOverLimit, setIsOverLimit] = useState<boolean>(false)
+	const [formData, setFormData] = useState({
+		firstName: "",
+		lastName: "",
+		email: "",
+		phoneNum: "",
+		idea: "",
+	})
 
-	const handleFirstNameFormChange = (val: string) => {
-		setFirstNameFormValue(val)
-	}
+	const [formErrors, setFormErrors] = useState({
+		firstName: false,
+		lastName: false,
+		email: false,
+		phoneNum: false,
+		idea: false,
+	})
 
-	const handleLastNameFormChange = (val: string) => {
-		setLastNameFormValue(val)
-	}
+	const requiredFields: (keyof typeof formData)[] = [
+		"firstName",
+		"lastName",
+		"email",
+		"phoneNum",
+		"idea",
+	]
 
-	const handleEmailFormChange = (val: string) => {
-		setEmailFormValue(val)
-	}
-
-	const handlePhoneNumFormChange = (val: string) => {
-		setPhoneNumFormValue(val)
-	}
-
-	const handleIdeaFormChange = (val: string) => {
-		setIdeaFormValue(val)
+	const handleFormChange = (field: keyof typeof formData, value: string) => {
+		setFormData({ ...formData, [field]: value })
 	}
 
 	const emailValidation = useMemo(() => {
 		const validateEmail = (val: string) =>
-			emailFormValue.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$/i)
-		if (emailFormValue === "") {
+			val.match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i)
+
+		if (formData.email === "") {
 			return undefined
 		}
 
-		return validateEmail(emailFormValue) ? "valid" : "invalid"
-	}, [emailFormValue])
+		return validateEmail(formData.email) ? "valid" : "invalid"
+	}, [formData.email])
 
 	const phoneNumValidation = useMemo(() => {
 		const validatePhoneNum = (val: string) =>
-			phoneNumFormValue.match(/^\+[0-9]{1,4}[-s./0-9]*$/i)
+			val.match(/^\+[0-9]{1,4}[-s./0-9]*$/i)
 
-		if (phoneNumFormValue === "") {
+		if (formData.phoneNum === "") {
 			return undefined
 		}
 
-		return validatePhoneNum(phoneNumFormValue) ? "valid" : "invalid"
-	}, [phoneNumFormValue])
-
-	const firstNameValidation = useMemo(() => {
-		const charLimit = 100
-
-		const isCharOverLimit = (val: string) => val.length > charLimit
-
-		return isCharOverLimit(firstNameFormValue) ? "invalid" : "valid"
-	}, [firstNameFormValue])
-
-	const lastNameValidation = useMemo(() => {
-		const charLimit = 100
-
-		const isCharOverLimit = (val: string) => val.length > charLimit
-
-		return isCharOverLimit(lastNameFormValue) ? "invalid" : "valid"
-	}, [lastNameFormValue])
+		return validatePhoneNum(formData.phoneNum) ? "valid" : "invalid"
+	}, [formData.phoneNum])
 
 	const handleSubmit = (e: FormEvent) => {
 		e.preventDefault()
 
-		if (
-			firstNameFormValue === "" &&
-			lastNameFormValue === "" &&
-			emailFormValue === "" &&
-			phoneNumFormValue === "" &&
-			ideaFormValue === ""
-		) {
-			setIsFirstNameFieldEmpty(true)
-			setIsLastNameFieldEmpty(true)
-			setIsEmailFieldEmpty(true)
-			setIsPhoneNumFieldEmpty(true)
-			setIsIdeaFieldEmpty(true)
-		} else {
-			setIsFirstNameFieldEmpty(firstNameFormValue === "")
-			setIsLastNameFieldEmpty(lastNameFormValue === "")
-			setIsEmailFieldEmpty(emailFormValue === "")
-			setIsPhoneNumFieldEmpty(phoneNumFormValue === "")
-			setIsIdeaFieldEmpty(ideaFormValue === "")
+		const newFormErrors = requiredFields.reduce(
+			(errors, field) => {
+				if (formData[field].trim() === "") {
+					return { ...errors, [field]: true }
+				}
+				return errors
+			},
+			{ ...formErrors }
+		)
+
+		setFormErrors(newFormErrors)
+
+		if (!Object.values(newFormErrors).some((error) => error)) {
+			// Submit the form or perform other actions
 		}
 	}
 
@@ -138,54 +114,38 @@ const ContactUs = ({ onClose }: Props) => {
 								placeholder="Your first name"
 								label="First Name"
 								desc="Ex: John"
-								value={firstNameFormValue}
-								onValueChange={handleFirstNameFormChange}
+								value={formData.firstName}
+								onValueChange={(val) =>
+									handleFormChange("firstName", val)
+								}
 								validationState={
-									isOverLimit ||
-									isFirstNameFieldEmpty ||
-									firstNameValidation === "invalid"
-										? "invalid"
-										: "valid"
+									formErrors.firstName ? "invalid" : "valid"
 								}
 								errorMessage={
-									(isOverLimit ||
-										isFirstNameFieldEmpty ||
-										firstNameValidation === "invalid") &&
+									formErrors.firstName &&
 									"Please enter a value! (Max 100 characters)"
 								}
 								color={
-									isOverLimit ||
-									isFirstNameFieldEmpty ||
-									firstNameValidation === "invalid"
-										? "danger"
-										: "default"
+									formErrors.firstName ? "danger" : "default"
 								}
 							/>
 							<NameInput
 								placeholder="Your last name"
 								label="Last Name"
 								desc="Ex: Doe"
-								value={lastNameFormValue}
-								onValueChange={handleLastNameFormChange}
-								validationState={
-									isOverLimit ||
-									isLastNameFieldEmpty ||
-									lastNameValidation === "invalid"
-										? "invalid"
-										: "valid"
+								value={formData.lastName}
+								onValueChange={(val) =>
+									handleFormChange("lastName", val)
 								}
-								color={
-									isOverLimit ||
-									isLastNameFieldEmpty ||
-									lastNameValidation === "invalid"
-										? "danger"
-										: "default"
+								validationState={
+									formErrors.lastName ? "invalid" : "valid"
 								}
 								errorMessage={
-									(isOverLimit ||
-										isLastNameFieldEmpty ||
-										lastNameValidation === "invalid") &&
+									formErrors.lastName &&
 									"Please enter a value! (Max 100 characters)"
+								}
+								color={
+									formErrors.lastName ? "danger" : "default"
 								}
 							/>
 						</div>
@@ -193,23 +153,22 @@ const ContactUs = ({ onClose }: Props) => {
 							<EmailInput
 								color={
 									emailValidation === "invalid" ||
-									isOverLimit ||
-									isEmailFieldEmpty
+									formErrors.email
 										? "danger"
 										: "default"
 								}
-								onValueChange={handleEmailFormChange}
-								value={emailFormValue}
+								onValueChange={(val) =>
+									handleFormChange("email", val)
+								}
+								value={formData.email}
 								errorMessage={
 									(emailValidation === "invalid" ||
-										isOverLimit ||
-										isEmailFieldEmpty) &&
-									"Please enter a valid email! (Max 100 characters)"
+										formErrors.email) &&
+									"Please enter a valid email!"
 								}
 								validationState={
 									emailValidation === "invalid" ||
-									isOverLimit ||
-									isEmailFieldEmpty
+									formErrors.email
 										? "invalid"
 										: "valid"
 								}
@@ -217,23 +176,22 @@ const ContactUs = ({ onClose }: Props) => {
 							<PhoneNumInput
 								color={
 									phoneNumValidation === "invalid" ||
-									isOverLimit ||
-									isPhoneNumFieldEmpty
+									formErrors.phoneNum
 										? "danger"
 										: "default"
 								}
-								onValueChange={handlePhoneNumFormChange}
-								value={phoneNumFormValue}
+								onValueChange={(val) =>
+									handleFormChange("phoneNum", val)
+								}
+								value={formData.phoneNum}
 								errorMessage={
 									(phoneNumValidation === "invalid" ||
-										isOverLimit ||
-										isPhoneNumFieldEmpty) &&
-									"Please enter a valid number! (Max 100 characters)"
+										formErrors.phoneNum) &&
+									"Please enter a valid number!"
 								}
 								validationState={
 									phoneNumValidation === "invalid" ||
-									isOverLimit ||
-									isPhoneNumFieldEmpty
+									formErrors.phoneNum
 										? "invalid"
 										: "valid"
 								}
@@ -302,12 +260,14 @@ const ContactUs = ({ onClose }: Props) => {
 							placeholder="Describe about your idea"
 							label="What is your idea?"
 							description="Ex: Business opportunity, partnership, etc."
-							value={ideaFormValue}
-							onValueChange={handleIdeaFormChange}
-							validationState={
-								isIdeaFieldEmpty ? "invalid" : "valid"
+							value={formData.idea}
+							onValueChange={(val) =>
+								handleFormChange("idea", val)
 							}
-							color={isLastNameFieldEmpty ? "danger" : "default"}
+							validationState={
+								formErrors.idea ? "invalid" : "valid"
+							}
+							color={formErrors.idea ? "danger" : "default"}
 						/>
 					</div>
 				</ModalBody>
@@ -341,13 +301,12 @@ const ContactUs = ({ onClose }: Props) => {
 							radius="sm"
 							onClick={handleSubmit}
 							isDisabled={
-								firstNameFormValue === "" ||
-								lastNameFormValue === "" ||
-								emailFormValue === "" ||
-								phoneNumFormValue === "" ||
-								ideaFormValue === ""
-									? true
-									: false
+								Object.values(formErrors).some(
+									(error) => error
+								) ||
+								requiredFields.some(
+									(field) => formData[field].trim() === ""
+								)
 							}
 						>
 							Submit Form
