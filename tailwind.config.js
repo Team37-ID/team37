@@ -47,7 +47,8 @@ module.exports = {
 				"8xl": "88rem",
 			},
 			animation: {
-				"text-slide": "text-slide 12.5s cubic-bezier(0.83, 0, 0.17, 1) infinite"
+				"text-slide": "text-slide 12.5s cubic-bezier(0.83, 0, 0.17, 1) infinite",
+				"logos-slide": "logos-slide 40s linear infinite"
 			},
 			keyframes: {
 				"text-slide": {
@@ -73,6 +74,14 @@ module.exports = {
 						transform: "translateY(-85.8%)",
 					},
 				},
+				"logos-slide": {
+					from: {
+						transform: "translateX(0)"
+					},
+					to: {
+						transform: "translateX(-100%)"
+					}
+				}
 			},
 		},
 	},
