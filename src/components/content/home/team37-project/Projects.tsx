@@ -3,6 +3,7 @@ import Image from "next/image"
 import { useMobileView } from "@/hooks/useMobileView"
 import ButtonNormal from "@/components/ui/button/ButtonNormal"
 import { ArrowRight } from "iconoir-react"
+import Marquee from "react-fast-marquee"
 
 const Projects = () => {
 	const { isMobileView } = useMobileView({ breakpoint: 763 })
@@ -24,18 +25,37 @@ const Projects = () => {
 								expertise. Your success starts here.
 							</p>
 						</div>
-						<Link
-							href="https://www.cozylila.com"
-							target="_blank"
-							passHref
-						>
-							<Image
-								src="cozylila.svg"
-								width={isMobileView ? 109 : 150}
-								height={isMobileView ? 48 : 64}
-								alt="Cozylila logo"
-							/>
-						</Link>
+						<div className="left-0">
+							<Marquee
+								pauseOnHover
+								gradient
+								gradientColor="#000000"
+							>
+								<div className="flex align-middle justify-center items-center space-x-36 mx-8">
+									<Link
+										href="https://www.instagram.com/mondasari_bakery/"
+										target="_blank"
+										passHref
+									>
+										<Image
+											src="mondasari.svg"
+											width={isMobileView ? 109 : 150}
+											height={isMobileView ? 48 : 64}
+											alt="Mondasari Bakery logo"
+										/>
+									</Link>
+									<p className="text-white opacity-40 font-bold text-center text-4xl">
+										YOUR BRAND HERE
+									</p>
+									<p className="text-white opacity-40 font-bold text-center text-4xl">
+										YOUR BRAND HERE
+									</p>
+									<p className="text-white opacity-40 font-bold text-center text-4xl">
+										YOUR BRAND HERE
+									</p>
+								</div>
+							</Marquee>
+						</div>
 					</div>
 				</div>
 				<div className="flex flex-col our-projects">
