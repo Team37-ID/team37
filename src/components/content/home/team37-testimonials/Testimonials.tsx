@@ -1,5 +1,6 @@
 import { useMobileView } from "@/hooks/useMobileView"
 import Image from "next/image"
+import Carousel from "nuka-carousel"
 
 const Testimonials = () => {
 	const { isMobileView } = useMobileView({ breakpoint: 763 })
@@ -20,34 +21,88 @@ const Testimonials = () => {
 							success stories yourself!
 						</p>
 					</div>
-					<div className="flex flex-col items-center align-middle md:flex-row w-full gap-6 md:justify-between">
-						<div className="flex flex-col items-center md:items-start gap-6 client-testi w-[327px] md:w-[445px]">
-							<p className="font-normal text-gray-300 text-sm leading-5 text-center md:text-left md:text-lg md:leading-7">
-								&#34;Team 37&#39;s services have been nothing
-								short of exceptional! Their strategic insights
-								and innovative solutions have propelled our
-								company to new heights. A truly valuable partner
-								for growth.&#34;
-							</p>
-							<div className="flex flex-row items-center align-midle justify-center md:items-start gap-4 md:gap-6">
-								<Image
-									className="rounded-full"
-									src="/avatar.png"
-									width={isMobileView ? 32 : 48}
-									height={isMobileView ? 32 : 48}
-									alt="Picture of client"
-								/>
-								<div>
-									<h1 className="font-bold text-base leading-6 text-white capitalize md:text-lg md:leading-7">
-										Rebecca Turner
-									</h1>
-									<h2 className="font-normal text-xs leading-4 md:text-sm md:leading-5 text-stone-400">
-										CFO of Cozylila
-									</h2>
+					<Carousel swiping autoplay withoutControls>
+						<div className="flex flex-col items-center align-middle md:flex-row w-full gap-6 md:justify-between">
+							<div className="flex flex-col items-center md:items-start gap-6 client-testi w-[327px] md:w-[445px]">
+								<p className="font-normal text-gray-300 text-sm leading-5 text-center md:text-left md:text-lg md:leading-7">
+									&#34;Team 37&#39;s services have been
+									nothing short of exceptional! Their
+									strategic insights and innovative solutions
+									have propelled our company to new heights. A
+									truly valuable partner for growth.&#34;
+								</p>
+								<div className="flex flex-row items-center align-midle justify-center md:items-start gap-4 md:gap-6">
+									<Image
+										className="rounded-full"
+										src="/avatar.png"
+										width={isMobileView ? 32 : 48}
+										height={isMobileView ? 32 : 48}
+										alt="Picture of client"
+									/>
+									<div>
+										<h1 className="font-bold text-base leading-6 text-white capitalize md:text-lg md:leading-7">
+											Rebecca Turner
+										</h1>
+										<h2 className="font-normal text-xs leading-4 md:text-sm md:leading-5 text-stone-400">
+											CFO of Cozylila
+										</h2>
+									</div>
+								</div>
+							</div>
+							<div className="flex flex-col items-center md:items-start gap-6 client-testi w-[327px] md:w-[445px]">
+								<p className="font-normal text-gray-300 text-sm leading-5 text-center md:text-left md:text-lg md:leading-7">
+									&#34;Team 37&#39;s services have been
+									nothing short of exceptional! Their
+									strategic insights and innovative solutions
+									have propelled our company to new heights. A
+									truly valuable partner for growth.&#34;
+								</p>
+								<div className="flex flex-row items-center align-midle justify-center md:items-start gap-4 md:gap-6">
+									<Image
+										className="rounded-full"
+										src="/avatar.png"
+										width={isMobileView ? 32 : 48}
+										height={isMobileView ? 32 : 48}
+										alt="Picture of client"
+									/>
+									<div>
+										<h1 className="font-bold text-base leading-6 text-white capitalize md:text-lg md:leading-7">
+											Rebecca Turner
+										</h1>
+										<h2 className="font-normal text-xs leading-4 md:text-sm md:leading-5 text-stone-400">
+											CFO of Cozylila
+										</h2>
+									</div>
+								</div>
+							</div>
+							<div className="flex flex-col items-center md:items-start gap-6 client-testi w-[327px] md:w-[445px]">
+								<p className="font-normal text-gray-300 text-sm leading-5 text-center md:text-left md:text-lg md:leading-7">
+									&#34;Team 37&#39;s services have been
+									nothing short of exceptional! Their
+									strategic insights and innovative solutions
+									have propelled our company to new heights. A
+									truly valuable partner for growth.&#34;
+								</p>
+								<div className="flex flex-row items-center align-midle justify-center md:items-start gap-4 md:gap-6">
+									<Image
+										className="rounded-full"
+										src="/avatar.png"
+										width={isMobileView ? 32 : 48}
+										height={isMobileView ? 32 : 48}
+										alt="Picture of client"
+									/>
+									<div>
+										<h1 className="font-bold text-base leading-6 text-white capitalize md:text-lg md:leading-7">
+											Rebecca Turner
+										</h1>
+										<h2 className="font-normal text-xs leading-4 md:text-sm md:leading-5 text-stone-400">
+											CFO of Cozylila
+										</h2>
+									</div>
 								</div>
 							</div>
 						</div>
-					</div>
+					</Carousel>
 				</div>
 			</div>
 		</>
