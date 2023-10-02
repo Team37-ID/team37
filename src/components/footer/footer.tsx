@@ -16,7 +16,7 @@ const Footer = () => {
 					<Link href="#">
 						<Team37Logo width={150} height={150} />
 					</Link>
-					<p>PT Nusa Tekno Solusi</p>
+					<p>PT Solutek Nusa Abadi</p>
 					<p className="w-[277px]">
 						Ruko Mega Grosir Cempaka Mas Blok I No.51, Jalan Sumur
 						Batu, Kecamatan Kemayoran, Jakarta Pusat
