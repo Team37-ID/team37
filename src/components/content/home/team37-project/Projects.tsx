@@ -4,6 +4,7 @@ import { useMobileView } from "@/hooks/useMobileView"
 import ButtonNormal from "@/components/ui/button/ButtonNormal"
 import { ArrowRight } from "iconoir-react"
 import Marquee from "react-fast-marquee"
+import Carousel from "nuka-carousel"
 
 const Projects = () => {
 	const { isMobileView } = useMobileView({ breakpoint: 763 })
@@ -76,77 +77,34 @@ const Projects = () => {
 								<ArrowRight />
 							</ButtonNormal>
 						</div>
-						<div className="flex flex-col md:flex-row gap-12 md:gap-16 justify-center items-center align-middle">
-							<div className="flex flex-col items-center justify-center gap-4 w-max">
-								<Image
-									className="items-center border-2 border-white rounded-2xl"
-									src="/nuxtlabs.png"
-									width={isMobileView ? 309 : 512}
-									height={isMobileView ? 150 : 249}
-									alt="projects"
-								/>
-								<div className="flex flex-col items-center justify-center">
-									<h1 className="font-bold text-white md:text-xl md:leading-7">
-										NuxtLabs: Your vision, today
-									</h1>
-									<Link
-										href="https://nuxtlabs.com"
-										target="_blank"
-										passHref
-									>
-										<span className="text-base font-normal leading-6 text-blue-400 hover:border-b hover:border-blue-400">
-											nuxtlabs.com
-										</span>
-									</Link>
+						<Carousel swiping autoplay withoutControls>
+							<div className="flex flex-col md:flex-row gap-12 md:gap-16 justify-start items-start align-middle">
+								<div className="flex flex-col items-center justify-center gap-4 w-max">
+									<Image
+										className="items-center border-2 border-white rounded-2xl object-cover h-64"
+										src="/1080.png"
+										width={isMobileView ? 309 : 450}
+										height={isMobileView ? 150 : 250}
+										alt="projects"
+										loading="lazy"
+									/>
+									<div className="flex flex-col items-center justify-center">
+										<h1 className="font-bold text-white md:text-xl md:leading-7">
+											Mondasari Bakery
+										</h1>
+										<Link
+											href="https://nuxtlabs.com"
+											target="_blank"
+											passHref
+										>
+											<span className="text-base font-normal leading-6 text-blue-400 hover:border-b hover:border-blue-400">
+												nuxtlabs.com
+											</span>
+										</Link>
+									</div>
 								</div>
 							</div>
-							<div className="flex flex-col items-center justify-center gap-4 w-max">
-								<Image
-									className="items-center border-2 border-white rounded-2xl"
-									src="/nuxtlabs.png"
-									width={isMobileView ? 309 : 512}
-									height={isMobileView ? 150 : 249}
-									alt="projects"
-								/>
-								<div className="flex flex-col items-center justify-center">
-									<h1 className="font-bold text-white md:text-xl md:leading-7">
-										NuxtLabs: Your vision, today
-									</h1>
-									<Link
-										href="https://nuxtlabs.com"
-										target="_blank"
-										passHref
-									>
-										<span className="text-base font-normal leading-6 text-blue-400 hover:border-b hover:border-blue-400">
-											nuxtlabs.com
-										</span>
-									</Link>
-								</div>
-							</div>
-							<div className="flex flex-col items-center justify-center gap-4 w-max">
-								<Image
-									className="items-center border-2 border-white rounded-2xl"
-									src="/nuxtlabs.png"
-									width={isMobileView ? 309 : 512}
-									height={isMobileView ? 150 : 249}
-									alt="projects"
-								/>
-								<div className="flex flex-col items-center justify-center">
-									<h1 className="font-bold text-white md:text-xl md:leading-7">
-										NuxtLabs: Your vision, today
-									</h1>
-									<Link
-										href="https://nuxtlabs.com"
-										target="_blank"
-										passHref
-									>
-										<span className="text-base font-normal leading-6 text-blue-400 hover:border-b hover:border-blue-400">
-											nuxtlabs.com
-										</span>
-									</Link>
-								</div>
-							</div>
-						</div>
+						</Carousel>
 					</div>
 				</div>
 			</div>
