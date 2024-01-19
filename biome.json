@@ -27,5 +27,15 @@
 			"bracketSpacing": true,
 			"bracketSameLine": false
 		}
+	},
+	"css": {
+		"formatter": {
+			"enabled": true,
+			"lineEnding": "lf",
+			"indentStyle": "tab",
+			"quoteStyle": "double",
+			"indentWidth": 4,
+			"lineWidth": 80
+		}
 	}
 }
