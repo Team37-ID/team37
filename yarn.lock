@@ -19,6 +19,60 @@
   dependencies:
     regenerator-runtime "^0.14.0"
 
+"@biomejs/biome@1.5.2":
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/@biomejs/biome/-/biome-1.5.2.tgz#fdc194125a904ec69a87cb48b03141b6c070df66"
+  integrity sha512-LhycxGQBQLmfv6M3e4tMfn/XKcUWyduDYOlCEBrHXJ2mMth2qzYt1JWypkWp+XmU/7Hl2dKvrP4mZ5W44+nWZw==
+  optionalDependencies:
+    "@biomejs/cli-darwin-arm64" "1.5.2"
+    "@biomejs/cli-darwin-x64" "1.5.2"
+    "@biomejs/cli-linux-arm64" "1.5.2"
+    "@biomejs/cli-linux-arm64-musl" "1.5.2"
+    "@biomejs/cli-linux-x64" "1.5.2"
+    "@biomejs/cli-linux-x64-musl" "1.5.2"
+    "@biomejs/cli-win32-arm64" "1.5.2"
+    "@biomejs/cli-win32-x64" "1.5.2"
+
+"@biomejs/cli-darwin-arm64@1.5.2":
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/@biomejs/cli-darwin-arm64/-/cli-darwin-arm64-1.5.2.tgz#fc744f6ac454ce18b1b36d306c77b2bdb216d6ae"
+  integrity sha512-3JVl08aHKsPyf0XL9SEj1lssIMmzOMAn2t1zwZKBiy/mcZdb0vuyMSTM5haMQ/90wEmrkYN7zux777PHEGrGiw==
+
+"@biomejs/cli-darwin-x64@1.5.2":
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/@biomejs/cli-darwin-x64/-/cli-darwin-x64-1.5.2.tgz#2439a338166b9acb6d56939bd9e8e6331ee43dcb"
+  integrity sha512-QAPW9rZb/AgucUx+ogMg+9eJNipQDqvabktC5Tx4Aqb/mFzS6eDqNP7O0SbGz3DtC5Y2LATEj6o6zKIQ4ZT+3w==
+
+"@biomejs/cli-linux-arm64-musl@1.5.2":
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/@biomejs/cli-linux-arm64-musl/-/cli-linux-arm64-musl-1.5.2.tgz#fe5cafb9ff34ebfed7a5abe28a71cfbddd4de70f"
+  integrity sha512-Z29SjaOyO4QfajplNXSjLx17S79oPN42D094zjE24z7C7p3NxvLhKLygtSP9emgaXkcoESe2chOzF4IrGy/rlg==
+
+"@biomejs/cli-linux-arm64@1.5.2":
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/@biomejs/cli-linux-arm64/-/cli-linux-arm64-1.5.2.tgz#2fd9305441d9df0aca5dfa9e56004d951aea0ec9"
+  integrity sha512-fVLrUgIlo05rO4cNu+Py5EwwmXnXhWH+8KrNlWkr2weMYjq85SihUsuWWKpmqU+bUVR+m5gwfcIXZVWYVCJMHw==
+
+"@biomejs/cli-linux-x64-musl@1.5.2":
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/@biomejs/cli-linux-x64-musl/-/cli-linux-x64-musl-1.5.2.tgz#80cc7eb91ea10aca0a17e6296fa468b0b3332793"
+  integrity sha512-ZolquPEjWYUmGeERS8svHOOT7OXEeoriPnV8qptgWJmYF9EO9HUGRn1UtCvdVziDYK+u1A7PxjOdkY1B00ty5A==
+
+"@biomejs/cli-linux-x64@1.5.2":
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/@biomejs/cli-linux-x64/-/cli-linux-x64-1.5.2.tgz#9247165d0514a6f0fa17f9c8cd49c7d9769a9641"
+  integrity sha512-ixqJtUHtF0ho1+1DTZQLAEwHGSqvmvHhAAFXZQoaSdABn+IcITYExlFVA3bGvASy/xtPjRhTx42hVwPtLwMHwg==
+
+"@biomejs/cli-win32-arm64@1.5.2":
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/@biomejs/cli-win32-arm64/-/cli-win32-arm64-1.5.2.tgz#86d709f835547537f87fd07c35b6ef3b97dca54f"
+  integrity sha512-DN4cXSAoFTdjOoh7f+JITj1uQgQSXt+1pVea9bFrpbgip+ZwkONqQq+jUcmFMMehbp9LuiVtNXFz/ReHn6FY7A==
+
+"@biomejs/cli-win32-x64@1.5.2":
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/@biomejs/cli-win32-x64/-/cli-win32-x64-1.5.2.tgz#607f0e4c01c22e573785bd69be2d7be3415838f8"
+  integrity sha512-YvWWXZmk936FdrXqc2jcP6rfsXsNBIs9MKBQQoVXIihwNNRiAaBD9Iwa/ouU1b7Zxq2zETgeuRewVJickFuVOw==
+
 "@eslint-community/eslint-utils@^4.2.0":
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/@eslint-community/eslint-utils/-/eslint-utils-4.4.0.tgz#a23514e8fb9af1269d5f7788aa556798d61c6b59"
@@ -2242,6 +2296,7 @@ streamsearch@^1.1.0:
   integrity sha512-Mcc5wHehp9aXz1ax6bZUyY5afg9u2rv5cqQI3mRrYkGC8rW2hM02jWuwjtL++LS5qinSyhj2QfLyNsuc+VsExg==
 
 "string-width-cjs@npm:string-width@^4.2.0", string-width@^4.1.0:
+  name string-width-cjs
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
   integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
@@ -2302,6 +2357,7 @@ string.prototype.trimstart@^1.0.7:
     es-abstract "^1.22.1"
 
 "strip-ansi-cjs@npm:strip-ansi@^6.0.1", strip-ansi@^6.0.0, strip-ansi@^6.0.1:
+  name strip-ansi-cjs
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-6.0.1.tgz#9e26c63d30f53443e9489495b2105d37b67a85d9"
   integrity sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==
