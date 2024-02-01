@@ -22,8 +22,8 @@ const Navbar = () => {
 	return (
 		<header className="flex flex-row items-center justify-between absolute px-8 py-4 z-50 w-full">
 			<Logo width={128} height={128} />
-			<NavigationMenu>
-				<NavigationMenuList className="">
+			<NavigationMenu className="border rounded-full p-1">
+				<NavigationMenuList>
 					{navItemsList.map((item) => (
 						<NavigationMenuItem
 							key={`${navId}-${item.title.toLowerCase()}`}
@@ -48,30 +48,29 @@ const Navbar = () => {
 									</NavigationMenuLink>
 								</Link>
 							)}
-							<NavigationMenuContent className="flex flex-col p-4">
+							<NavigationMenuContent>
 								{item.subMenu?.map((subItem) => (
-									<div
+									<Link
 										key={`${navId}-${subItem.title.toLowerCase()}`}
-										className="flex flex-row w-full flex-nowrap"
+										href={`${subItem.url}`}
+										className={`flex flex-row group gap-4 w-full overflow-x-auto items-start group-hover:bg-${subItem.color}/30 p-4 rounded-md`}
 									>
-										<Image
-											src={`${subItem.icon}`}
-											width={48}
-											height={48}
-											alt={`37.${subItem.color} Logo`}
-										/>
-										<Link
-											href={`${subItem.url}`}
-											className="flex flex-col justify-center items-start p-2 rounded-md w-full text-nowrap transition-all duration-300 hover:bg-gray-100"
+										<span
+											className={`text-lexend-deca font-bold text-center text-lg text-black border border-black rounded-md py-2 px-1 transition-all group-hover:text-${subItem.color}`}
 										>
-											<NavigationMenuLink className="text-black w-full text-base capitalize font-medium bg-transparent hover:bg-transparent">
+											{subItem.icon}
+										</span>
+										<div className="flex flex-col">
+											<NavigationMenuLink
+												className={`text-black font-medium text-base group-hover:text-${subItem.color}`}
+											>
 												{subItem.title}
 											</NavigationMenuLink>
-											<p className="text-gray-400 text-nowrap text-sm">
+											<p className="text-sm text-gray-500 text-nowrap">
 												{subItem.description}
 											</p>
-										</Link>
-									</div>
+										</div>
+									</Link>
 								))}
 							</NavigationMenuContent>
 						</NavigationMenuItem>
