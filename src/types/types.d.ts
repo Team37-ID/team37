@@ -5,4 +5,5 @@ export type NavItemTypes = {
 	icon?: React.ReactNode
 	subMenu?: NavItemTypes[]
 	hasSubMenu?: boolean
+	color?: string
 }
