@@ -14,7 +14,7 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { navItemsList } from "@/data/navItemsList"
 import { useId } from "react"
-import Image from "next/image"
+import SubMenu from "@/components/ui/submenu"
 
 const Navbar = () => {
 	const navId = useId()
@@ -48,47 +48,61 @@ const Navbar = () => {
 									</NavigationMenuLink>
 								</Link>
 							)}
-							<NavigationMenuContent>
-								<div className="p-4">
-									<Link
-										href=""
-										className="flex flex-row group transition-all duration-300 gap-4 w-full overflow-x-auto items-start hover:bg-dev/30 p-4 rounded-md"
-									>
-										<span className="text-lexend-deca lowercase font-bold text-center text-lg text-black border border-black rounded-sm py-2 px-1 transition-all group-hover:text-dev">
-											.dev
-										</span>
-										<div className="flex flex-col">
-											<NavigationMenuLink className="text-black font-medium text-base group-hover:text-dev capitalize">
-												Development
-											</NavigationMenuLink>
-											<p className="text-sm text-gray-500 text-nowrap">
-												Lorem ipsum dolor sit amet
+							<NavigationMenuContent className="pt-4 pb-4">
+								<SubMenu
+									href="/"
+									title="Development"
+									color="dev"
+									icon=".dev"
+									description="Lorem ipsum dolor sit amet
 												consectetur adipisicing elit.
-												Quos, quae.
-											</p>
-										</div>
-									</Link>
-								</div>
-								<div className="p-4">
-									<Link
-										href=""
-										className="flex flex-row group transition-all duration-300 gap-4 w-full overflow-x-auto items-start hover:bg-des/30 p-4 rounded-md"
-									>
-										<span className="text-lexend-deca lowercase font-bold text-center text-lg text-black border border-black rounded-sm py-2 px-1 transition-all group-hover:text-des">
-											.des
-										</span>
-										<div className="flex flex-col">
-											<NavigationMenuLink className="text-black font-medium text-base group-hover:text-des capitalize">
-												Development
-											</NavigationMenuLink>
-											<p className="text-sm text-gray-500 text-nowrap">
-												Lorem ipsum dolor sit amet
+												Quos, quae."
+								/>
+								<SubMenu
+									href="/"
+									title="Design"
+									color="des"
+									icon=".des"
+									description="Lorem ipsum dolor sit amet
 												consectetur adipisicing elit.
-												Quos, quae.
-											</p>
-										</div>
-									</Link>
-								</div>
+												Quos, quae."
+								/>
+								<SubMenu
+									href="/"
+									title="Security"
+									color="sec"
+									icon=".sec"
+									description="Lorem ipsum dolor sit amet
+												consectetur adipisicing elit.
+												Quos, quae."
+								/>
+								<SubMenu
+									href="/"
+									title="Outsource"
+									color="out"
+									icon=".out"
+									description="Lorem ipsum dolor sit amet
+												consectetur adipisicing elit.
+												Quos, quae."
+								/>
+								<SubMenu
+									href="/"
+									title="Education"
+									color="edu"
+									icon=".edu"
+									description="Lorem ipsum dolor sit amet
+												consectetur adipisicing elit.
+												Quos, quae."
+								/>
+								<SubMenu
+									href="/"
+									title="Artificial Intelligence"
+									color="ai"
+									icon=".ai"
+									description="Lorem ipsum dolor sit amet
+												consectetur adipisicing elit.
+												Quos, quae."
+								/>
 							</NavigationMenuContent>
 						</NavigationMenuItem>
 					))}
