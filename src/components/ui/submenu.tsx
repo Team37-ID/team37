@@ -17,9 +17,11 @@ const SubMenu = ({ title, description, href, color, icon }: SubMenuProps) => {
 				className={`flex flex-row group transition-all duration-300 gap-4 w-full overflow-x-auto items-start hover:bg-${color}/30 p-4 rounded-md`}
 			>
 				<span
-					className={`flex flex-col text-lexend-deca lowercase items-center align-middle justify-center font-bold text-center text-lg text-black border border-black rounded-sm h-12 w-12 transition-all group-hover:text-white group-hover:bg-gradient-to-b group-hover:from-black group-hover:to-${color}`}
+					className={`text-lexend-deca lowercase font-bold text-center text-lg text-black border border-black rounded-sm h-12 w-12 transition-all group-hover:text-white group-hover:bg-gradient-to-b group-hover:from-black group-hover:to-${color}`}
 				>
-					{icon}
+					<div className="flex flex-col items-center justify-center align-middle group-hover:bg-noise group-hover:bg-contain w-full h-full">
+						{icon}
+					</div>
 				</span>
 				<div className="flex flex-col">
 					<NavigationMenuLink
