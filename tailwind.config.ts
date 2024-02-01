@@ -89,6 +89,9 @@ const config = {
 				"accordion-up": "accordion-up 0.2s ease-out",
 				spotlight: "spotlight 2s ease .75s 1 forwards",
 			},
+			fontFamily: {
+				"lexend-deca": "Lexend Deca"
+			}
 		},
 	},
 	plugins: [require("tailwindcss-animate")],
