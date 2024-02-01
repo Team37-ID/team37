@@ -49,29 +49,46 @@ const Navbar = () => {
 								</Link>
 							)}
 							<NavigationMenuContent>
-								{item.subMenu?.map((subItem) => (
+								<div className="p-4">
 									<Link
-										key={`${navId}-${subItem.title.toLowerCase()}`}
-										href={`${subItem.url}`}
-										className={`flex flex-row group gap-4 w-full overflow-x-auto items-start group-hover:bg-${subItem.color}/30 p-4 rounded-md`}
+										href=""
+										className="flex flex-row group transition-all duration-300 gap-4 w-full overflow-x-auto items-start hover:bg-dev/30 p-4 rounded-md"
 									>
-										<span
-											className={`text-lexend-deca font-bold text-center text-lg text-black border border-black rounded-md py-2 px-1 transition-all group-hover:text-${subItem.color}`}
-										>
-											{subItem.icon}
+										<span className="text-lexend-deca lowercase font-bold text-center text-lg text-black border border-black rounded-sm py-2 px-1 transition-all group-hover:text-dev">
+											.dev
 										</span>
 										<div className="flex flex-col">
-											<NavigationMenuLink
-												className={`text-black font-medium text-base group-hover:text-${subItem.color}`}
-											>
-												{subItem.title}
+											<NavigationMenuLink className="text-black font-medium text-base group-hover:text-dev capitalize">
+												Development
 											</NavigationMenuLink>
 											<p className="text-sm text-gray-500 text-nowrap">
-												{subItem.description}
+												Lorem ipsum dolor sit amet
+												consectetur adipisicing elit.
+												Quos, quae.
 											</p>
 										</div>
 									</Link>
-								))}
+								</div>
+								<div className="p-4">
+									<Link
+										href=""
+										className="flex flex-row group transition-all duration-300 gap-4 w-full overflow-x-auto items-start hover:bg-des/30 p-4 rounded-md"
+									>
+										<span className="text-lexend-deca lowercase font-bold text-center text-lg text-black border border-black rounded-sm py-2 px-1 transition-all group-hover:text-des">
+											.des
+										</span>
+										<div className="flex flex-col">
+											<NavigationMenuLink className="text-black font-medium text-base group-hover:text-des capitalize">
+												Development
+											</NavigationMenuLink>
+											<p className="text-sm text-gray-500 text-nowrap">
+												Lorem ipsum dolor sit amet
+												consectetur adipisicing elit.
+												Quos, quae.
+											</p>
+										</div>
+									</Link>
+								</div>
 							</NavigationMenuContent>
 						</NavigationMenuItem>
 					))}
