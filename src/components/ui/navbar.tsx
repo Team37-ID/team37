@@ -68,7 +68,7 @@ const Navbar = () => {
 						>
 							Contact
 						</NavigationMenuTrigger>
-						<NavigationMenuContent className="p-4 w-full flex flex-col space-y-3">
+						<NavigationMenuContent className="px-2 pt-4 pb-4 w-full flex flex-col space-y-3">
 							<Link href="/sales" className="group">
 								<NavigationMenuLink className="capitalize transition-all duration-300 text-black px-4 py-2 w-full text-nowrap group-hover:bg-transparent group-hover:text-neutral-400">
 									Contact Sales
