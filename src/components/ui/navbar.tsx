@@ -12,100 +12,60 @@ import {
 import Logo from "@/components/ui/logo"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { navItemsList } from "@/data/navItemsList"
-import { useId } from "react"
-import SubMenu from "@/components/ui/submenu"
+import DevService from "./navbar-menu/dev-service"
+import DesService from "./navbar-menu/des-service"
 
 const Navbar = () => {
-	const navId = useId()
-
 	return (
 		<header className="flex flex-row items-center justify-between absolute px-8 py-4 z-50 w-full">
 			<Logo width={128} height={128} />
 			<NavigationMenu className="border rounded-full p-1">
 				<NavigationMenuList>
-					{navItemsList.map((item) => (
-						<NavigationMenuItem
-							key={`${navId}-${item.title.toLowerCase()}`}
+					<NavigationMenuItem>
+						<NavigationMenuTrigger
+							aria-label="Services"
+							className="capitalize"
 						>
-							{item.hasSubMenu ? (
-								<NavigationMenuTrigger
-									aria-label={item.title}
-									className="capitalize"
-								>
-									{item.title}
-								</NavigationMenuTrigger>
-							) : (
-								<Link
-									key={`${navId}-${item.title.toLowerCase()}`}
-									href={`${item.url}`}
-									passHref
-								>
-									<NavigationMenuLink
-										className={`capitalize ${navigationMenuTriggerStyle()}`}
-									>
-										{item.title}
-									</NavigationMenuLink>
-								</Link>
-							)}
-							<NavigationMenuContent className="pt-4 pb-4">
-								<SubMenu
-									href="/"
-									title="Development"
-									color="dev"
-									icon=".dev"
-									description="Lorem ipsum dolor sit amet
-												consectetur adipisicing elit.
-												Quos, quae."
-								/>
-								<SubMenu
-									href="/"
-									title="Design"
-									color="des"
-									icon=".des"
-									description="Lorem ipsum dolor sit amet
-												consectetur adipisicing elit.
-												Quos, quae."
-								/>
-								<SubMenu
-									href="/"
-									title="Security"
-									color="sec"
-									icon=".sec"
-									description="Lorem ipsum dolor sit amet
-												consectetur adipisicing elit.
-												Quos, quae."
-								/>
-								<SubMenu
-									href="/"
-									title="Outsource"
-									color="out"
-									icon=".out"
-									description="Lorem ipsum dolor sit amet
-												consectetur adipisicing elit.
-												Quos, quae."
-								/>
-								<SubMenu
-									href="/"
-									title="Education"
-									color="edu"
-									icon=".edu"
-									description="Lorem ipsum dolor sit amet
-												consectetur adipisicing elit.
-												Quos, quae."
-								/>
-								<SubMenu
-									href="/"
-									title="Artificial Intelligence"
-									color="ai"
-									icon=".ai"
-									description="Lorem ipsum dolor sit amet
-												consectetur adipisicing elit.
-												Quos, quae."
-								/>
-							</NavigationMenuContent>
-						</NavigationMenuItem>
-					))}
+							Services
+						</NavigationMenuTrigger>
+						<NavigationMenuContent className="pt-4 pb-4">
+							<DevService />
+							<DesService />
+						</NavigationMenuContent>
+						<Link href="/projects" passHref>
+							<NavigationMenuLink className={`capitalize ${navigationMenuTriggerStyle()}`}>
+								Projects
+							</NavigationMenuLink>
+						</Link>
+						<Link href="/pricing" passHref>
+							<NavigationMenuLink className={`capitalize ${navigationMenuTriggerStyle()}`}>
+								Pricing
+							</NavigationMenuLink>
+						</Link>
+						<Link href="/career" passHref>
+							<NavigationMenuLink className={`capitalize ${navigationMenuTriggerStyle()}`}>
+								Career
+							</NavigationMenuLink>
+						</Link>
+						<Link href="/blog" passHref>
+							<NavigationMenuLink className={`capitalize ${navigationMenuTriggerStyle()}`}>
+								Blog
+							</NavigationMenuLink>
+						</Link>
+					</NavigationMenuItem>
+					<NavigationMenuItem>
+						<NavigationMenuTrigger
+							aria-label="Contact"
+							className="capitalize"
+						>
+							Contact
+						</NavigationMenuTrigger>
+						<NavigationMenuContent className="pt-4 pb-4">
+							{/* TODO: Add Contact Item */}
+							{/* TODO: - Contact Sales */}
+							{/* TODO: - Contact Support */}
+						</NavigationMenuContent>
+					</NavigationMenuItem>
 				</NavigationMenuList>
 			</NavigationMenu>
 			<Button className="text-white capitalize">Book a call</Button>
