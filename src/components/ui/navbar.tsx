@@ -49,6 +49,11 @@ const Navbar = () => {
 					<NavigationMenuItem>
 						<NavigationMenuTrigger>Company</NavigationMenuTrigger>
 						<NavigationMenuContent className="px-2 pt-4 pb-4 w-full flex flex-col space-y-3">
+							<Link href="/about-us" className="group" passHref>
+								<NavigationMenuLink className="capitalize transition-all duration-300 text-black px-4 py-2 w-full text-nowrap group-hover:bg-transparent group-hover:text-neutral-400">
+									About Us
+								</NavigationMenuLink>
+							</Link>
 							<Link href="/career" className="group" passHref>
 								<NavigationMenuLink className="capitalize transition-all duration-300 text-black px-4 py-2 w-full text-nowrap group-hover:bg-transparent group-hover:text-neutral-400">
 									Career
