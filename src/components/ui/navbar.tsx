@@ -14,10 +14,31 @@ import Link from "next/link"
 import DevService from "./navbar-menu/dev-service"
 import DesService from "./navbar-menu/des-service"
 import CtaButton from "./cta-button"
+import { useEffect, useState } from "react"
 
 const Navbar = () => {
+	const [isScrolled, setIsScrolled] = useState<boolean>(false)
+
+	useEffect(() => {
+		const handleScroll = () => {
+			const offset = window.scrollY
+			const shouldBeScrolled = offset > 10
+			setIsScrolled(shouldBeScrolled)
+		}
+
+		window.addEventListener("scroll", handleScroll)
+
+		return () => window.removeEventListener("scroll", handleScroll)
+	})
+
 	return (
-		<header className="flex flex-row items-center justify-between absolute px-8 py-4 z-50 w-full">
+		<header
+			className={`flex flex-row items-center justify-between sticky top-0 px-8 py-4 z-50 w-full ${
+				isScrolled
+					? "bg-gradient-to-br from-black/30 to-black/5 backdrop-blur-md backdrop-filter transition-all duration-300"
+					: "bg-transparent"
+			}`}
+		>
 			<Logo width={128} height={128} />
 			<NavigationMenu className="border rounded-full p-1">
 				<NavigationMenuList>
