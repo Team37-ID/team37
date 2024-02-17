@@ -41,7 +41,7 @@ const LandingPage = ({ className, children }: LandingPageProps) => {
 					initial={{ y: 20, opacity: 0 }}
 					transition={{ duration: 0.5, delay: 1.5 }}
 				>
-					<p className="font-normal text-base text-neutral-300 max-w-lg text-center mx-auto">
+					<p className="font-normal text-sm md:text-base text-neutral-300 max-w-lg text-center mx-auto">
 						Comprehensive suite of services tailored to meet your
 						business needs, empowering you to thrive in the digital
 						age.
