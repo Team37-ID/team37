@@ -97,6 +97,8 @@ const config = {
 			},
 			fontFamily: {
 				"lexend-deca": "Lexend Deca",
+				"chivo-mono": "var(--font-chivo-mono)",
+				manrope: "var(--font-manrope)",
 			},
 		},
 	},
