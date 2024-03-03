@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Chivo_Mono, Manrope } from "next/font/google"
 import "./globals.css"
+import NavigationBar from "@/components/ui/navigation-bar"
 
 const chivo_mono = Chivo_Mono({
 	weight: ["100", "200", "300", "400", "500", "600", "700", "800"],
@@ -34,6 +35,7 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={`${chivo_mono.variable} ${manrope.variable}`}>
+				<NavigationBar />
 				{children}
 			</body>
 		</html>
