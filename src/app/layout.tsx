@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Chivo_Mono } from "next/font/google"
+import { Chivo_Mono, Manrope } from "next/font/google"
 import "./globals.css"
 
 const chivo_mono = Chivo_Mono({
@@ -9,6 +9,16 @@ const chivo_mono = Chivo_Mono({
 	fallback: ["sans-serif"],
 	preload: true,
 	display: "swap",
+	variable: "--font-chivo-mono",
+})
+
+const manrope = Manrope({
+	subsets: ["latin"],
+	adjustFontFallback: true,
+	fallback: ["sans-serif"],
+	preload: true,
+	display: "swap",
+	variable: "--font-manrope",
 })
 
 export const metadata: Metadata = {
@@ -23,7 +33,9 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={chivo_mono.className}>{children}</body>
+			<body className={`${chivo_mono.variable} ${manrope.variable}`}>
+				{children}
+			</body>
 		</html>
 	)
 }
