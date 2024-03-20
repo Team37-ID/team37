@@ -11,7 +11,7 @@ const NavigationBar = () => {
 	return (
 		<>
 			<div className="absolute top-0 z-50 w-full">
-				<header className="flex flex-row justify-between items-center z-50 mx-64 mt-4 bg-[#D8D8D8]/20 border-gray-300 border backdrop-blur-md py-2 px-4 rounded-full">
+				<header className="flex flex-row justify-between items-center z-50 md:mx-64 mx-4 mt-4 bg-[#D8D8D8]/20 border-gray-300 border backdrop-blur-md py-2 px-4 rounded-full">
 					<Logo height={96} width={96} />
 					<Switch.Root
 						value={resolvedTheme}
