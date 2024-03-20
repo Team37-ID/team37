@@ -3,8 +3,11 @@ import { ShaderGradientCanvas, ShaderGradient } from "shadergradient"
 import * as reactSpring from "@react-spring/three"
 import * as drei from "@react-three/drei"
 import * as fiber from "@react-three/fiber"
+import { useTheme } from "next-themes"
 
 const ShaderBackground = () => {
+	const { resolvedTheme } = useTheme()
+
 	const shaderLight =
 		"https://www.shadergradient.co/customize?animate=on&axesHelper=off&bgColor1=%23000000&bgColor2=%23000000&brightness=1.2&cAzimuthAngle=180&cDistance=2.9&cPolarAngle=120&cameraZoom=1&color1=%23E2E2DD&color2=%23E5E0D9&color3=%23E1D9CD&destination=onCanvas&embedMode=off&envPreset=city&format=gif&fov=45&frameRate=10&gizmoHelper=hide&grain=on&lightType=3d&pixelDensity=1&positionX=0&positionY=1.8&positionZ=0&range=enabled&rangeEnd=40&rangeStart=0&reflection=0.1&rotationX=0&rotationY=0&rotationZ=-90&shader=defaults&type=waterPlane&uDensity=1&uFrequency=5.5&uSpeed=0.3&uStrength=3&uTime=0.2&wireframe=false"
 	const shaderDark =
@@ -14,7 +17,10 @@ const ShaderBackground = () => {
 		<ShaderGradientCanvas
 			importedFiber={{ ...fiber, ...reactSpring, ...drei }}
 		>
-			<ShaderGradient control="query" urlString={shaderLight} />
+			<ShaderGradient
+				control="query"
+				urlString={resolvedTheme === "light" ? shaderLight : shaderDark}
+			/>
 		</ShaderGradientCanvas>
 	)
 }
